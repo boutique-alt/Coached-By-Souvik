@@ -10,10 +10,10 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pt-2 sm:pt-3 pb-2 sm:pb-3 bg-gradient-to-b from-[#0a0a0a] via-[#0a0a0a]/95 to-transparent backdrop-blur-md">
-      <div className="max-w-[90rem] mx-auto px-4 sm:px-8 flex items-center justify-between">
-        {/* Logo - Perfectly balanced size so it doesn't touch hero content */}
+      <div className="max-w-[90rem] mx-auto px-3 sm:px-8 flex items-center justify-between">
+        {/* Logo - Matches Reference perfectly */}
         <Link href="/" className="group flex items-center">
-          <div className="relative w-14 h-14 sm:w-16 md:w-20 sm:h-16 md:h-20 rounded-full overflow-hidden border-2 border-[#ff3333] shadow-[0_0_25px_rgba(255,51,51,0.5)] group-hover:scale-105 group-hover:shadow-[0_0_35px_rgba(255,51,51,0.8)] transition-all bg-black shrink-0">
+          <div className="relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-[#ff3333] shadow-[0_0_25px_rgba(255,51,51,0.5)] group-hover:scale-105 group-hover:shadow-[0_0_35px_rgba(255,51,51,0.8)] transition-all bg-black shrink-0">
             <Image 
               src="/logo.jpg" 
               alt="Coached by Souvik" 
@@ -37,24 +37,25 @@ export default function Navbar() {
         </nav>
         
         {/* Right CTA Group */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2.5 sm:gap-4">
           <button 
             onClick={openCart}
-            className="relative bg-[#140606] hover:bg-[#1f0a0a] border border-[#ff3333]/40 text-white text-[10px] font-bold py-2.5 px-4 rounded-lg flex items-center space-x-2 transition-all uppercase tracking-widest group shadow-[0_0_15px_rgba(255,51,51,0.2)]"
+            aria-label="Consultation Cart"
+            className="relative bg-[#140606]/90 hover:bg-[#1f0a0a] border border-white/15 hover:border-[#ff3333]/50 text-white w-10 h-10 sm:w-auto sm:h-auto sm:py-2.5 sm:px-4 rounded-xl flex items-center justify-center sm:space-x-2 transition-all uppercase tracking-widest group shadow-[0_0_15px_rgba(255,51,51,0.15)] shrink-0"
           >
-            <ShoppingBag className="w-3.5 h-3.5 text-[#ff3333]" />
-            <span className="hidden sm:inline">Consultation Cart</span>
+            <ShoppingBag className="w-4 h-4 text-[#ff3333]" />
+            <span className="hidden sm:inline text-[10px] font-bold">Consultation Cart</span>
             {selectedService && (
-              <span className="w-2 h-2 rounded-full bg-[#ff3333] shadow-[0_0_8px_#ff3333] animate-ping ml-1" />
+              <span className="absolute top-1 right-1 sm:static w-2 h-2 rounded-full bg-[#ff3333] shadow-[0_0_8px_#ff3333] animate-ping" />
             )}
           </button>
 
           <button 
             onClick={openCart}
-            className="bg-gradient-to-r from-[#ff3333] to-[#cc0000] hover:from-[#ff1a1a] hover:to-[#990000] text-white text-[10px] font-bold py-2.5 px-6 rounded-md flex items-center space-x-2 transition-all uppercase tracking-widest shadow-[0_0_20px_rgba(255,51,51,0.4)]"
+            className="bg-gradient-to-r from-[#ff3333] to-[#cc0000] hover:from-[#ff1a1a] hover:to-[#990000] text-white text-[10px] sm:text-[11px] font-black py-2.5 px-4 sm:px-6 rounded-xl flex items-center space-x-1.5 sm:space-x-2 transition-all uppercase tracking-widest shadow-[0_0_20px_rgba(255,51,51,0.5)] shrink-0"
           >
             <span>Book Now</span>
-            <span className="text-lg leading-none ml-1">→</span>
+            <span className="text-sm sm:text-base leading-none ml-0.5">→</span>
           </button>
         </div>
       </div>
