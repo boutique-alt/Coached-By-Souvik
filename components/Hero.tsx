@@ -16,13 +16,13 @@ export default function Hero() {
       {/* Intense glow behind the guy's head / cards */}
       <div className="absolute top-[10%] right-[10%] w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,_rgba(255,20,0,0.2)_0%,_transparent_60%)] blur-[70px] z-0 pointer-events-none"></div>
 
-      {/* Mobile Hero Background Art (Matches Reference Image Exactly) */}
+      {/* Mobile Hero Background Art (Clean original fire photo, zero ghost text) */}
       <div className="lg:hidden absolute inset-0 z-0 overflow-hidden">
         <Image 
-          src="/hero_mobile_art_v4.jpg" 
+          src="/coach_fire_mobile_v2.jpg" 
           alt="Coach Souvik" 
           fill 
-          className="object-cover object-right-top sm:object-right" 
+          className="object-cover object-right" 
           priority 
         />
         {/* Left protective gradient ensuring crystal clear text readability */}
@@ -138,16 +138,16 @@ export default function Hero() {
           {/* Intense Backlight Flare directly behind the athlete */}
           <div className="absolute top-[30%] right-[5%] w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,_rgba(255,30,0,0.3)_0%,_transparent_60%)] rounded-full blur-[80px] z-20 pointer-events-none mix-blend-screen"></div>
 
-          {/* Main Image Container (Z-30 so it sits in FRONT of cards) */}
-          <div className="absolute bottom-0 right-0 w-full h-[95%] z-30 flex items-end justify-center pointer-events-auto" style={{ maskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)' }}>
+          {/* Main Image Container (Z-30 so it sits in FRONT of cards, transparent cutout with no background) */}
+          <div className="absolute bottom-0 right-0 w-full h-[88%] xl:h-[92%] z-30 flex items-end justify-center pointer-events-auto" style={{ maskImage: 'linear-gradient(to bottom, black 88%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 88%, transparent 100%)' }}>
              <Image 
-               src="/coach_back_desktop_v2.png" 
+               src="/coach_fire_hero_cutout.png" 
                alt="Souvik Fitness Coach" 
-               width={1100} 
-               height={1260}
-               className="w-[105%] max-w-[760px] h-auto object-contain object-bottom transform -translate-y-8 xl:-translate-y-12 mx-auto"
+               width={768} 
+               height={1024}
+               className="w-full max-w-[560px] xl:max-w-[620px] h-auto object-contain object-bottom translate-x-7 xl:translate-x-12 translate-y-6 xl:translate-y-8 mx-auto"
                style={{
-                 filter: 'drop-shadow(0px 0px 35px rgba(255, 30, 0, 0.25)) brightness(1.05) contrast(1.08)'
+                 filter: 'drop-shadow(0px 0px 35px rgba(255, 20, 0, 0.25))'
                }}
                priority
              />
