@@ -18,7 +18,8 @@ import {
   Crosshair, 
   CheckCircle2, 
   Quote, 
-  Sparkles 
+  Sparkles,
+  User 
 } from 'lucide-react';
 import { useBooking } from '@/context/BookingContext';
 
@@ -125,21 +126,21 @@ export default function WelcomeShowcase() {
         <div className="grid grid-cols-2 lg:grid-cols-12 gap-3 sm:gap-4 lg:gap-5 mb-5">
           
           {/* ----------------------------------------------------
-              CARD 01: LARGE FEATURED LEFT CARD
-              Mobile: col-span-1
+              CARD 01: MOVEMENT & BIOMECHANICS
+              Mobile: col-span-2
               Desktop: lg:col-span-4
              ---------------------------------------------------- */}
           <div 
             onClick={openCart}
-            className="col-span-1 lg:col-span-4 group relative bg-[#0e0c0b] rounded-[14px] sm:rounded-[18px] border-2 border-[#FF353D] shadow-[0_0_30px_rgba(255,53,61,0.25)] overflow-hidden flex flex-col justify-between min-h-[250px] sm:min-h-[320px] lg:min-h-[580px] cursor-pointer transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,53,61,0.4)]"
+            className="col-span-2 lg:col-span-4 group relative bg-[#0e0c0b] rounded-[14px] sm:rounded-[18px] border-2 border-[#FF353D] shadow-[0_0_30px_rgba(255,53,61,0.25)] overflow-hidden flex flex-col justify-between min-h-[280px] sm:min-h-[340px] lg:min-h-[580px] cursor-pointer transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,53,61,0.4)]"
           >
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
               <Image
-                src="/gallery/new_img_1.jpg"
-                alt="Precision Biomechanics"
+                src="/movement_biomechanics.webp"
+                alt="Movement and Biomechanics Coaching"
                 fill
-                sizes="(max-width: 1024px) 50vw, 35vw"
+                sizes="(max-width: 1024px) 100vw, 35vw"
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 priority
               />
@@ -148,25 +149,25 @@ export default function WelcomeShowcase() {
               <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent"></div>
             </div>
 
-            {/* Top Badge: 01 TECHNIQUE */}
-            <div className="relative z-10 p-3 sm:p-5">
+            {/* Top Badge: 01 MOVEMENT */}
+            <div className="relative z-10 p-3.5 sm:p-5">
               <div className="inline-flex items-center gap-1 sm:gap-1.5 bg-[#FF353D] text-white text-[8px] sm:text-[9px] font-black uppercase tracking-widest px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md shadow-md">
                 <span>01</span>
                 <span>•</span>
-                <span>TECHNIQUE</span>
+                <span>MOVEMENT</span>
               </div>
             </div>
 
             {/* Bottom Content Area */}
-            <div className="relative z-10 p-3 sm:p-5 lg:p-6">
+            <div className="relative z-10 p-3.5 sm:p-5 lg:p-6">
               <div className="flex items-end justify-between gap-2 sm:gap-4 mb-2 sm:mb-3">
                 <div>
-                  <h3 className="text-sm sm:text-lg lg:text-3xl font-black uppercase tracking-tight text-white leading-tight">
-                    PRECISION <br className="hidden sm:inline" />
+                  <h3 className="text-base sm:text-lg lg:text-3xl font-black uppercase tracking-tight text-white leading-tight">
+                    MOVEMENT &amp; <br className="hidden sm:inline" />
                     <span className="text-[#FF353D]">BIOMECHANICS</span>
                   </h3>
-                  <p className="text-[#a8a09b] text-[10px] sm:text-xs font-normal mt-1 leading-snug line-clamp-2">
-                    Joint-friendly hypertrophy designed around structural levers.
+                  <p className="text-[#a8a09b] text-[10.5px] sm:text-xs font-normal mt-1 leading-snug line-clamp-3 sm:line-clamp-2">
+                    Understand how you move. Improve technique, address movement limitations and build strength with greater control.
                   </p>
                 </div>
 
@@ -176,45 +177,44 @@ export default function WelcomeShowcase() {
                 </div>
               </div>
 
-              {/* Bottom Feature Badges / Meta Points */}
+              {/* Bottom Feature Badges */}
               <div className="pt-2 sm:pt-3 border-t border-white/10 flex items-center flex-wrap gap-1.5 sm:gap-3 text-[8px] sm:text-[10px] text-[#88807b] font-semibold uppercase tracking-wider">
                 <span className="flex items-center gap-1 text-white/90">
                   <Activity className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#FF353D]" /> Movement
                 </span>
                 <span className="flex items-center gap-1 text-white/90">
-                  <ShieldCheck className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#FF353D]" /> Prevention
+                  <ShieldCheck className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#FF353D]" /> Technique
                 </span>
               </div>
             </div>
           </div>
 
           {/* ----------------------------------------------------
-              RIGHT SIDE CONTAINER
+              RIGHT SIDE CONTAINER (6 CARDS IN 2 ROWS OF 3)
               On mobile (<lg): contents lets cards flow seamlessly 2-per-row in parent grid
               On desktop (lg): lg:flex lg:flex-col lg:col-span-8 lg:gap-5
              ---------------------------------------------------- */}
           <div className="contents lg:flex lg:flex-col lg:col-span-8 lg:gap-5">
             
-            {/* ROW 1: 2 Cards (Desktop: 2 cards; Mobile: flows as cards 2 and 3) */}
-            <div className="contents lg:grid lg:grid-cols-2 lg:gap-5">
+            {/* ROW 1: 3 Cards on Desktop (Cards 02, 03, 04) */}
+            <div className="contents lg:grid lg:grid-cols-3 lg:gap-5">
               
-              {/* CARD 02: PERFORMANCE | NATIONAL STAGE CONDITIONING */}
+              {/* CARD 02: ATHLETIC PERFORMANCE */}
               <div 
                 onClick={openCart}
-                className="col-span-1 group relative bg-[#0e0c0b] rounded-[14px] sm:rounded-[18px] border border-white/10 hover:border-[#FF353D]/60 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[250px] sm:min-h-[280px] cursor-pointer shadow-md hover:shadow-[0_0_25px_rgba(255,53,61,0.25)]"
+                className="col-span-1 group relative bg-[#0e0c0b] rounded-[14px] sm:rounded-[18px] border border-white/10 hover:border-[#FF353D]/60 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[250px] sm:min-h-[275px] cursor-pointer shadow-md hover:shadow-[0_0_25px_rgba(255,53,61,0.25)]"
               >
                 <div className="absolute inset-0 z-0">
                   <Image
-                    src="/gallery/new_img_2.jpg"
-                    alt="National Stage Conditioning"
+                    src="/athletic_performance.jpg"
+                    alt="Athletic Performance Coaching"
                     fill
-                    sizes="(max-width: 768px) 100vw, 30vw"
-                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#080706] via-[#080706]/75 to-black/30"></div>
                 </div>
 
-                {/* Top Badge: 02 PERFORMANCE */}
                 <div className="relative z-10 p-3 sm:p-4">
                   <div className="inline-flex items-center gap-1 sm:gap-1.5 bg-[#1a1412]/90 border border-white/10 text-white text-[8px] sm:text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-md">
                     <span className="text-[#FF353D]">02</span>
@@ -223,53 +223,46 @@ export default function WelcomeShowcase() {
                   </div>
                 </div>
 
-                {/* Bottom Content */}
-                <div className="relative z-10 p-3 sm:p-4 lg:p-5">
-                  <div className="flex items-end justify-between gap-2 sm:gap-3 mb-2">
+                <div className="relative z-10 p-3 sm:p-4">
+                  <div className="flex items-end justify-between gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
                     <div>
-                      <h3 className="text-sm sm:text-base lg:text-xl font-black uppercase tracking-tight text-white leading-none">
-                        NATIONAL STAGE <br className="hidden sm:inline" />
-                        <span className="text-[#FF353D]">CONDITIONING</span>
+                      <h3 className="text-xs sm:text-sm lg:text-base font-black uppercase tracking-tight text-white leading-tight">
+                        ATHLETIC <br className="hidden sm:inline" />
+                        <span className="text-[#FF353D]">PERFORMANCE</span>
                       </h3>
-                      <p className="text-[#a8a09b] text-[10px] sm:text-[11px] font-normal mt-1 leading-snug line-clamp-2">
-                        Peak contest conditioning & vascularity protocol.
+                      <p className="text-[#a8a09b] text-[9px] sm:text-[10px] font-normal mt-0.5 leading-snug line-clamp-2">
+                        Develop the conditioning, speed, endurance and work capacity to perform when it matters.
                       </p>
                     </div>
 
-                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#1c1816]/90 border border-white/20 flex items-center justify-center shrink-0 group-hover:border-[#FF353D] group-hover:bg-[#FF353D] transition-all">
-                      <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#1c1816]/90 border border-white/20 flex items-center justify-center shrink-0 group-hover:border-[#FF353D] group-hover:bg-[#FF353D] transition-all">
+                      <ChevronRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" />
                     </div>
                   </div>
 
-                  {/* Badges */}
-                  <div className="pt-2 sm:pt-2.5 border-t border-white/10 flex flex-wrap items-center gap-1.5 sm:gap-3 text-[8px] sm:text-[9px] text-white/80 font-bold uppercase tracking-wider">
-                    <span className="flex items-center gap-1">
-                      <Heart className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#FF353D]" /> Endurance
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Activity className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#FF353D]" /> Conditioning
-                    </span>
+                  <div className="pt-2 border-t border-white/10 flex flex-wrap items-center gap-1.5 sm:gap-2 text-[7px] sm:text-[8px] text-white/70 font-semibold uppercase tracking-wider">
+                    <span className="flex items-center gap-0.5"><Activity className="w-2.5 h-2.5 text-[#FF353D]" /> Conditioning</span>
+                    <span className="flex items-center gap-0.5"><Zap className="w-2.5 h-2.5 text-[#FF353D]" /> Endurance</span>
                   </div>
                 </div>
               </div>
 
-              {/* CARD 03: STRENGTH | PROGRESSIVE OVERLOAD */}
+              {/* CARD 03: PROGRESSIVE STRENGTH */}
               <div 
                 onClick={openCart}
-                className="col-span-1 group relative bg-[#0e0c0b] rounded-[14px] sm:rounded-[18px] border border-white/10 hover:border-[#FF353D]/60 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[250px] sm:min-h-[280px] cursor-pointer shadow-md hover:shadow-[0_0_25px_rgba(255,53,61,0.25)]"
+                className="col-span-1 group relative bg-[#0e0c0b] rounded-[14px] sm:rounded-[18px] border border-white/10 hover:border-[#FF353D]/60 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[250px] sm:min-h-[275px] cursor-pointer shadow-md hover:shadow-[0_0_25px_rgba(255,53,61,0.25)]"
               >
                 <div className="absolute inset-0 z-0">
                   <Image
-                    src="/gallery/new_img_3.jpg"
-                    alt="Progressive Overload"
+                    src="/progressive_strength.png"
+                    alt="Progressive Strength Coaching"
                     fill
-                    sizes="(max-width: 768px) 50vw, 30vw"
+                    sizes="(max-width: 768px) 50vw, 25vw"
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#080706] via-[#080706]/75 to-black/30"></div>
                 </div>
 
-                {/* Top Badge: 03 STRENGTH */}
                 <div className="relative z-10 p-3 sm:p-4">
                   <div className="inline-flex items-center gap-1 sm:gap-1.5 bg-[#1a1412]/90 border border-white/10 text-white text-[8px] sm:text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-md">
                     <span className="text-[#FF353D]">03</span>
@@ -278,120 +271,164 @@ export default function WelcomeShowcase() {
                   </div>
                 </div>
 
-                {/* Bottom Content */}
-                <div className="relative z-10 p-3 sm:p-4 lg:p-5">
-                  <div className="flex items-end justify-between gap-2 sm:gap-3 mb-2">
+                <div className="relative z-10 p-3 sm:p-4">
+                  <div className="flex items-end justify-between gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
                     <div>
-                      <h3 className="text-sm sm:text-base lg:text-xl font-black uppercase tracking-tight text-white leading-none">
+                      <h3 className="text-xs sm:text-sm lg:text-base font-black uppercase tracking-tight text-white leading-tight">
                         PROGRESSIVE <br className="hidden sm:inline" />
-                        <span className="text-[#FF353D]">OVERLOAD</span>
+                        <span className="text-[#FF353D]">STRENGTH</span>
                       </h3>
-                      <p className="text-[#a8a09b] text-[10px] sm:text-[11px] font-normal mt-1 leading-snug line-clamp-2">
-                        Compound power tracked through periodization.
+                      <p className="text-[#a8a09b] text-[9px] sm:text-[10px] font-normal mt-0.5 leading-snug line-clamp-2">
+                        Build strength through structured programming, progressive overload and measurable performance.
                       </p>
                     </div>
 
-                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#1c1816]/90 border border-white/20 flex items-center justify-center shrink-0 group-hover:border-[#FF353D] group-hover:bg-[#FF353D] transition-all">
-                      <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#1c1816]/90 border border-white/20 flex items-center justify-center shrink-0 group-hover:border-[#FF353D] group-hover:bg-[#FF353D] transition-all">
+                      <ChevronRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" />
                     </div>
                   </div>
 
-                  {/* Badges */}
-                  <div className="pt-2 sm:pt-2.5 border-t border-white/10 flex flex-wrap items-center gap-1.5 sm:gap-3 text-[8px] sm:text-[9px] text-white/80 font-bold uppercase tracking-wider">
-                    <span className="flex items-center gap-1">
-                      <Dumbbell className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#FF353D]" /> Stronger
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#FF353D]" /> Measurable
-                    </span>
+                  <div className="pt-2 border-t border-white/10 flex flex-wrap items-center gap-1.5 sm:gap-2 text-[7px] sm:text-[8px] text-white/70 font-semibold uppercase tracking-wider">
+                    <span className="flex items-center gap-0.5"><Dumbbell className="w-2.5 h-2.5 text-[#FF353D]" /> Strength</span>
+                    <span className="flex items-center gap-0.5"><TrendingUp className="w-2.5 h-2.5 text-[#FF353D]" /> Progression</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* CARD 04: MUSCLE & BODY COMPOSITION */}
+              <div 
+                onClick={openCart}
+                className="col-span-1 group relative bg-[#0e0c0b] rounded-[14px] sm:rounded-[18px] border border-white/10 hover:border-[#FF353D]/60 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[250px] sm:min-h-[275px] cursor-pointer shadow-md hover:shadow-[0_0_25px_rgba(255,53,61,0.25)]"
+              >
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src="/muscle_body_composition.jpg"
+                    alt="Muscle & Body Composition"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#080706] via-[#080706]/80 to-black/30"></div>
+                </div>
+
+                <div className="relative z-10 p-3 sm:p-4">
+                  <div className="inline-flex items-center gap-1 bg-[#1a1412]/90 border border-white/10 text-white text-[8px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md">
+                    <span className="text-[#FF353D]">04</span>
+                    <span>•</span>
+                    <span>PHYSIQUE</span>
+                  </div>
+                </div>
+
+                <div className="relative z-10 p-3 sm:p-4">
+                  <div className="flex items-end justify-between gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
+                    <div>
+                      <h3 className="text-xs sm:text-sm lg:text-base font-black uppercase tracking-tight text-white leading-tight">
+                        MUSCLE &amp; BODY <br className="hidden sm:inline" />
+                        <span className="text-[#FF353D]">COMPOSITION</span>
+                      </h3>
+                      <p className="text-[#a8a09b] text-[9px] sm:text-[10px] font-normal mt-0.5 leading-snug line-clamp-2">
+                        Build muscle, improve body composition and develop a physique through purposeful training.
+                      </p>
+                    </div>
+
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#1c1816]/90 border border-white/20 flex items-center justify-center shrink-0 group-hover:border-[#FF353D] group-hover:bg-[#FF353D] transition-all">
+                      <ChevronRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" />
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-white/10 flex flex-wrap items-center gap-1.5 sm:gap-2 text-[7px] sm:text-[8px] text-white/70 font-semibold uppercase tracking-wider">
+                    <span className="flex items-center gap-0.5"><Flame className="w-2.5 h-2.5 text-[#FF353D]" /> Hypertrophy</span>
+                    <span className="flex items-center gap-0.5"><Layers className="w-2.5 h-2.5 text-[#FF353D]" /> Composition</span>
                   </div>
                 </div>
               </div>
 
             </div>
 
-            {/* ROW 2: 3 Cards on Desktop, flows 2-per-row on Mobile */}
+            {/* ROW 2: 3 Cards on Desktop (Cards 05, 06, 07) */}
             <div className="contents lg:grid lg:grid-cols-3 lg:gap-5">
               
-              {/* CARD 04: MUSCLE BUILDING | SCULPTED MUSCULARITY */}
+              {/* CARD 05: INJURY RECOVERY & RETURN TO TRAINING */}
               <div 
                 onClick={openCart}
-                className="col-span-1 group relative bg-[#0e0c0b] rounded-[14px] sm:rounded-[18px] border border-white/10 hover:border-[#FF353D]/60 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[250px] sm:min-h-[260px] cursor-pointer shadow-md hover:shadow-[0_0_25px_rgba(255,53,61,0.25)]"
+                className="col-span-1 group relative bg-[#0e0c0b] rounded-[14px] sm:rounded-[18px] border border-white/10 hover:border-[#FF353D]/60 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[250px] sm:min-h-[275px] cursor-pointer shadow-md hover:shadow-[0_0_25px_rgba(255,53,61,0.25)]"
               >
                 <div className="absolute inset-0 z-0">
                   <Image
-                    src="/gallery/new_img_4.jpg"
-                    alt="Sculpted Muscularity"
+                    src="/rehabilitation.png"
+                    alt="Injury Recovery & Return to Training"
                     fill
-                    sizes="(max-width: 768px) 50vw, 20vw"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#080706] via-[#080706]/80 to-black/30"></div>
-                </div>
-
-                <div className="relative z-10 p-3 sm:p-3.5">
-                  <div className="inline-flex items-center gap-1 bg-[#1a1412]/90 border border-white/10 text-white text-[8px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md">
-                    <span className="text-[#FF353D]">04</span>
-                    <span>•</span>
-                    <span>MUSCLE</span>
-                  </div>
-                </div>
-
-                <div className="relative z-10 p-3 sm:p-3.5 lg:p-4">
-                  <div className="flex items-end justify-between gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
-                    <div>
-                      <h3 className="text-xs sm:text-sm lg:text-base font-black uppercase tracking-tight text-white leading-tight">
-                        SCULPTED MUSCULARITY
-                      </h3>
-                      <p className="text-[#a8a09b] text-[9px] sm:text-[10px] font-normal mt-0.5 line-clamp-2">
-                        Symmetry, density & balanced shape.
-                      </p>
-                    </div>
-
-                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#1c1816]/90 border border-white/20 flex items-center justify-center shrink-0 group-hover:border-[#FF353D] group-hover:bg-[#FF353D] transition-all">
-                      <ChevronRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" />
-                    </div>
-                  </div>
-
-                  <div className="pt-2 border-t border-white/10 flex flex-wrap items-center gap-1.5 sm:gap-2 text-[7px] sm:text-[8px] text-white/70 font-semibold uppercase tracking-wider">
-                    <span className="flex items-center gap-0.5"><Flame className="w-2.5 h-2.5 text-[#FF353D]" /> Aesthetic</span>
-                    <span className="flex items-center gap-0.5"><Layers className="w-2.5 h-2.5 text-[#FF353D]" /> Symmetry</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* CARD 05: COMPETITION PREP | ELITE COMPETITION PREP */}
-              <div 
-                onClick={openCart}
-                className="col-span-1 group relative bg-[#0e0c0b] rounded-[14px] sm:rounded-[18px] border border-white/10 hover:border-[#FF353D]/60 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[250px] sm:min-h-[260px] cursor-pointer shadow-md hover:shadow-[0_0_25px_rgba(255,53,61,0.25)]"
-              >
-                <div className="absolute inset-0 z-0">
-                  <Image
-                    src="/gallery/new_img_5.jpg"
-                    alt="Elite Competition Prep"
-                    fill
-                    sizes="(max-width: 768px) 50vw, 20vw"
+                    sizes="(max-width: 768px) 50vw, 25vw"
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#080706] via-[#080706]/80 to-black/30"></div>
                 </div>
 
-                <div className="relative z-10 p-3 sm:p-3.5">
+                <div className="relative z-10 p-3 sm:p-4">
                   <div className="inline-flex items-center gap-1 bg-[#1a1412]/90 border border-white/10 text-white text-[8px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md">
                     <span className="text-[#FF353D]">05</span>
+                    <span>•</span>
+                    <span>REHABILITATION</span>
+                  </div>
+                </div>
+
+                <div className="relative z-10 p-3 sm:p-4">
+                  <div className="flex items-end justify-between gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
+                    <div>
+                      <h3 className="text-xs sm:text-sm lg:text-base font-black uppercase tracking-tight text-white leading-tight">
+                        INJURY RECOVERY &amp; <br className="hidden sm:inline" />
+                        <span className="text-[#FF353D]">RETURN TO TRAINING</span>
+                      </h3>
+                      <p className="text-[#a8a09b] text-[9px] sm:text-[10px] font-normal mt-0.5 leading-snug line-clamp-2">
+                        Adapt training to your recovery needs, rebuild strength progressively, and return to movement.
+                      </p>
+                    </div>
+
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#1c1816]/90 border border-white/20 flex items-center justify-center shrink-0 group-hover:border-[#FF353D] group-hover:bg-[#FF353D] transition-all">
+                      <ChevronRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" />
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-white/10 flex flex-wrap items-center gap-1.5 sm:gap-2 text-[7px] sm:text-[8px] text-white/70 font-semibold uppercase tracking-wider">
+                    <span className="flex items-center gap-0.5"><ShieldCheck className="w-2.5 h-2.5 text-[#FF353D]" /> Adapted</span>
+                    <span className="flex items-center gap-0.5"><Activity className="w-2.5 h-2.5 text-[#FF353D]" /> Recovery</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* CARD 06: COMPETITION PREPARATION */}
+              <div 
+                onClick={openCart}
+                className="col-span-1 group relative bg-[#0e0c0b] rounded-[14px] sm:rounded-[18px] border border-white/10 hover:border-[#FF353D]/60 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[250px] sm:min-h-[275px] cursor-pointer shadow-md hover:shadow-[0_0_25px_rgba(255,53,61,0.25)]"
+              >
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src="/competition_prep_gold.jpg"
+                    alt="Competition Preparation"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#080706] via-[#080706]/75 to-black/30"></div>
+                </div>
+
+                <div className="relative z-10 p-3 sm:p-4">
+                  <div className="inline-flex items-center gap-1 bg-[#1a1412]/90 border border-white/10 text-white text-[8px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md">
+                    <span className="text-[#FF353D]">06</span>
                     <span>•</span>
                     <span>COMPETITION</span>
                   </div>
                 </div>
 
-                <div className="relative z-10 p-3 sm:p-3.5 lg:p-4">
+                <div className="relative z-10 p-3 sm:p-4">
                   <div className="flex items-end justify-between gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
                     <div>
                       <h3 className="text-xs sm:text-sm lg:text-base font-black uppercase tracking-tight text-white leading-tight">
-                        ELITE COMPETITION PREP
+                        COMPETITION <br className="hidden sm:inline" />
+                        <span className="text-[#FF353D]">PREPARATION</span>
                       </h3>
-                      <p className="text-[#a8a09b] text-[9px] sm:text-[10px] font-normal mt-0.5 line-clamp-2">
-                        Peak week carb & water manipulation.
+                      <p className="text-[#a8a09b] text-[9px] sm:text-[10px] font-normal mt-0.5 leading-snug line-clamp-2">
+                        Prepare with structured training, performance-focused programming and stage readiness.
                       </p>
                     </div>
 
@@ -401,44 +438,45 @@ export default function WelcomeShowcase() {
                   </div>
 
                   <div className="pt-2 border-t border-white/10 flex flex-wrap items-center gap-1.5 sm:gap-2 text-[7px] sm:text-[8px] text-white/70 font-semibold uppercase tracking-wider">
-                    <span className="flex items-center gap-0.5"><Trophy className="w-2.5 h-2.5 text-[#FF353D]" /> Peak</span>
-                    <span className="flex items-center gap-0.5"><Crosshair className="w-2.5 h-2.5 text-[#FF353D]" /> Strategy</span>
+                    <span className="flex items-center gap-0.5"><Trophy className="w-2.5 h-2.5 text-[#FF353D]" /> Periodisation</span>
+                    <span className="flex items-center gap-0.5"><Crosshair className="w-2.5 h-2.5 text-[#FF353D]" /> Peak</span>
                   </div>
                 </div>
               </div>
 
-              {/* CARD 06: MINDSET | MIND-MUSCLE CONNECTION */}
+              {/* CARD 07: PERSONALISED COACHING */}
               <div 
                 onClick={openCart}
-                className="col-span-1 group relative bg-[#0e0c0b] rounded-[14px] sm:rounded-[18px] border border-white/10 hover:border-[#FF353D]/60 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[250px] sm:min-h-[260px] cursor-pointer shadow-md hover:shadow-[0_0_25px_rgba(255,53,61,0.25)]"
+                className="col-span-1 group relative bg-[#0e0c0b] rounded-[14px] sm:rounded-[18px] border border-white/10 hover:border-[#FF353D]/60 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[250px] sm:min-h-[275px] cursor-pointer shadow-md hover:shadow-[0_0_25px_rgba(255,53,61,0.25)]"
               >
                 <div className="absolute inset-0 z-0">
                   <Image
-                    src="/gallery/new_img_6.jpg"
-                    alt="Mind-Muscle Connection"
+                    src="/personalised_coaching.webp"
+                    alt="Personalised Coaching"
                     fill
-                    sizes="(max-width: 768px) 50vw, 20vw"
+                    sizes="(max-width: 768px) 50vw, 25vw"
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#080706] via-[#080706]/80 to-black/30"></div>
                 </div>
 
-                <div className="relative z-10 p-3 sm:p-3.5">
+                <div className="relative z-10 p-3 sm:p-4">
                   <div className="inline-flex items-center gap-1 bg-[#1a1412]/90 border border-white/10 text-white text-[8px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md">
-                    <span className="text-[#FF353D]">06</span>
+                    <span className="text-[#FF353D]">07</span>
                     <span>•</span>
-                    <span>MINDSET</span>
+                    <span>INDIVIDUAL</span>
                   </div>
                 </div>
 
-                <div className="relative z-10 p-3 sm:p-3.5 lg:p-4">
+                <div className="relative z-10 p-3 sm:p-4">
                   <div className="flex items-end justify-between gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
                     <div>
                       <h3 className="text-xs sm:text-sm lg:text-base font-black uppercase tracking-tight text-white leading-tight">
-                        MIND-MUSCLE CONNECTION
+                        PERSONALISED <br className="hidden sm:inline" />
+                        <span className="text-[#FF353D]">COACHING</span>
                       </h3>
-                      <p className="text-[#a8a09b] text-[9px] sm:text-[10px] font-normal mt-0.5 line-clamp-2">
-                        Total focus and neurological recruitment.
+                      <p className="text-[#a8a09b] text-[9px] sm:text-[10px] font-normal mt-0.5 leading-snug line-clamp-2">
+                        A training approach shaped around your goals, capabilities and circumstances—not a template.
                       </p>
                     </div>
 
@@ -448,8 +486,8 @@ export default function WelcomeShowcase() {
                   </div>
 
                   <div className="pt-2 border-t border-white/10 flex flex-wrap items-center gap-1.5 sm:gap-2 text-[7px] sm:text-[8px] text-white/70 font-semibold uppercase tracking-wider">
-                    <span className="flex items-center gap-0.5"><Zap className="w-2.5 h-2.5 text-[#FF353D]" /> Focus</span>
-                    <span className="flex items-center gap-0.5"><ShieldCheck className="w-2.5 h-2.5 text-[#FF353D]" /> Discipline</span>
+                    <span className="flex items-center gap-0.5"><User className="w-2.5 h-2.5 text-[#FF353D]" /> Individual</span>
+                    <span className="flex items-center gap-0.5"><CheckCircle2 className="w-2.5 h-2.5 text-[#FF353D]" /> Long-Term</span>
                   </div>
                 </div>
               </div>
@@ -460,9 +498,9 @@ export default function WelcomeShowcase() {
         </div>
 
         {/* ========================================================
-            BOTTOM ROW: CARD 07 CLIENT TRANSFORMATION BANNER
-            Matches Blueprint exactly:
-            - Left: 07 TRANSFORMATION badge + CLIENT TRANSFORMATION + Subtitle + Action
+            BOTTOM ROW: CLIENT TRANSFORMATION CASE STUDY BANNER
+            Matches Blueprint:
+            - Left: RESULTS • TRANSFORMATION badge + CLIENT TRANSFORMATION
             - Center: Before (108 KG) and After (98 KG) transformation split
             - Right: Stats (-10 KG, + Visible Definition, + Strength) + Testimonial Quote
            ======================================================== */}
@@ -476,7 +514,7 @@ export default function WelcomeShowcase() {
             <div className="lg:col-span-3 flex flex-col justify-between h-full">
               <div>
                 <div className="inline-flex items-center gap-1.5 bg-[#1a1412] border border-white/10 text-white text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-md mb-3">
-                  <span className="text-[#FF353D]">07</span>
+                  <span className="text-[#FF353D]">RESULTS</span>
                   <span>•</span>
                   <span>TRANSFORMATION</span>
                 </div>

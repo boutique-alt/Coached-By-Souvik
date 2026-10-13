@@ -3,6 +3,8 @@ import Hero from '@/components/Hero';
 import WelcomeShowcase from '@/components/WelcomeShowcase';
 import ServicesSection from '@/components/ServicesSection';
 import CertificationsSection from '@/components/CertificationsSection';
+import ClientReviewCard from '@/components/ClientReviewCard';
+import FeedbackMarqueeSection from '@/components/FeedbackMarqueeSection';
 import Footer from '@/components/Footer';
 import { Play, ArrowRight, User, BarChart2, Settings, TrendingUp, Heart, Zap, Trophy, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import Image from 'next/image';
@@ -39,24 +41,27 @@ export default function Home() {
             <div className="relative">
               <span className="text-[#ff3333] text-xs font-bold tracking-[0.2em] uppercase mb-4 block">01 / About</span>
               
-              <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6 leading-[0.9]">
-                <span className="text-white block">More than a</span>
-                <span className="text-[#ff3333] block">Workout.</span>
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6 leading-[0.9]">
+                <span className="text-white block">The Goal Is Yours.</span>
+                <span className="text-[#ff3333] block">The Approach Is Mine.</span>
               </h2>
               
               {/* Red Accent Line */}
               <div className="w-16 h-1.5 bg-[#ff3333] mb-8"></div>
               
-              <p className="text-xl text-white font-semibold mb-6 max-w-lg leading-snug">
-                Coaching begins with understanding the person behind the goal.
+              <p className="text-lg md:text-xl text-white font-semibold mb-6 max-w-lg leading-snug">
+                Every person brings a different starting point. Good coaching knows what to do with it.
               </p>
               
-              <div className="space-y-5 text-[#b8b8b8] text-sm md:text-base leading-relaxed font-medium max-w-lg mb-10">
+              <div className="space-y-4 text-[#b8b8b8] text-sm md:text-base leading-relaxed font-medium max-w-lg mb-10">
                 <p>
-                  I'm Souvik Banerjee, a fitness coach with seven years of experience working with people from different backgrounds, goals and starting points.
+                  I'm Souvik Banerjee. For seven years, I've worked with people pursuing different versions of progress — building strength and muscle, losing fat, preparing to compete, improving performance, and returning to training after injury.
                 </p>
                 <p>
-                  My approach is simple: understand the individual, build the right strategy, and coach the process properly.
+                  The work isn't simply about prescribing exercises. It's about understanding the person, recognising what the goal demands, and developing the right strategy to get there.
+                </p>
+                <p className="text-white font-semibold">
+                  Different goals call for different approaches. My job is to know the difference.
                 </p>
               </div>
               
@@ -278,44 +283,13 @@ export default function Home() {
                     <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter mb-3 drop-shadow-md">MuscleMania India</h3>
                     <div className="flex items-center gap-2 text-[#ff3333]">
                        <Trophy className="w-4 h-4" />
-                       <span className="text-xs font-black uppercase tracking-widest">Gold Medalist</span>
+                       <span className="text-xs font-black uppercase tracking-widest">Competitive Athlete</span>
                     </div>
                  </div>
               </div>
 
-              {/* Card 2: Center Testimonial */}
-              <div className="relative rounded-2xl bg-[#0a0505] border border-[#ff3333]/50 shadow-[0_20px_50px_rgba(255,51,51,0.1)] p-6 md:p-8 flex flex-col justify-between overflow-hidden">
-                 {/* Top Quote Icon */}
-                 <div className="absolute -top-4 -left-2 text-[8rem] font-black text-[#ff3333] leading-none opacity-20 select-none">"</div>
-                 
-                 <div className="relative z-10">
-                    <div className="flex gap-1 mb-6 text-[#ff3333]">
-                       <Star className="w-4 h-4 fill-current" />
-                       <Star className="w-4 h-4 fill-current" />
-                       <Star className="w-4 h-4 fill-current" />
-                       <Star className="w-4 h-4 fill-current" />
-                       <Star className="w-4 h-4 fill-current" />
-                    </div>
-                    
-                    <div className="space-y-4 text-xs text-[#b8b8b8] font-medium leading-relaxed">
-                       <p className="font-bold text-white text-sm">Hi Souvik</p>
-                       <p>I wanted to take a moment to express my sincere appreciation and gratitude for the outstanding training experience I have had under your guidance.</p>
-                       <p>I've always been impressed by your professionalism. You are organized, and ensure that every session is well-structured and focused on my goals.</p>
-                       <p>I've seen significant improvements in my fitness levels, strength and overall well-being.</p>
-                       <p>Lastly, I appreciate your willingness to go the extra mile, connecting me with excellent doctors and physiotherapists to address my back pain. It has significantly improved.</p>
-                    </div>
-                 </div>
-                 
-                 <div className="flex items-center gap-4 mt-8 relative z-10 pt-6 border-t border-white/5">
-                    <div className="w-10 h-10 rounded-full overflow-hidden relative border border-[#ff3333]">
-                       <Image src="/client_1.jpg" alt="Rajesh Prasad" fill className="object-cover object-top" />
-                    </div>
-                    <div className="flex flex-col">
-                       <span className="text-white font-bold text-sm">Rajesh Prasad</span>
-                       <span className="text-[#a0a0a0] text-[9px] font-bold tracking-widest uppercase">Transformation Client</span>
-                    </div>
-                 </div>
-              </div>
+              {/* Card 2: Interactive Client Testimonials & Reviews */}
+              <ClientReviewCard />
 
               {/* Card 3: Men's Physique */}
               <div className="relative rounded-2xl overflow-hidden aspect-[3/4] border border-[#ff3333]/50 shadow-[0_20px_50px_rgba(255,51,51,0.1)] group">
@@ -431,6 +405,9 @@ export default function Home() {
 
           </div>
         </section>
+
+        {/* User Feedback & Real Stories (Infinite Moving Marquee) - Right Above Footer */}
+        <FeedbackMarqueeSection />
         </div>
       </main>
 

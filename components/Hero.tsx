@@ -60,18 +60,18 @@ export default function Hero() {
           </h1>
           
           {/* Paragraph (Takes narrow width & more vertical height so the coach is fully visible) */}
-          <p className="text-[#c0b8b2] text-[11px] sm:text-base max-w-[155px] xs:max-w-[180px] sm:max-w-xl leading-[1.65] font-normal mt-1">
-            Individualised coaching for people who want more than a generic workout plan. Strength, performance, movement, nutrition and real-world guidance — all built around your goals.
+          <p className="text-[#c0b8b2] text-[11px] sm:text-base max-w-[170px] xs:max-w-[210px] sm:max-w-xl leading-[1.6] font-normal mt-1">
+            Seven years of evidence-led coaching across athletic performance, strength, and real-world transformation. The goal is yours — the science and strategy are mine.
           </p>
           
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3.5 sm:gap-8 pt-2 sm:pt-6">
             <Link 
               href="#contact" 
-              className="relative bg-gradient-to-r from-[#ff3333] to-[#cc0000] text-white text-[10.5px] sm:text-xs font-black py-3 px-5 sm:py-3.5 sm:px-8 rounded-xl flex items-center justify-center space-x-2 transition-all uppercase tracking-[0.12em] shadow-[0_0_25px_rgba(255,51,51,0.5)] hover:shadow-[0_0_40px_rgba(255,51,51,0.8)] hover:-translate-y-1 group overflow-hidden border border-[#ff6666]/40"
+              className="relative bg-gradient-to-r from-[#ff3333] to-[#cc0000] text-white text-[10px] sm:text-xs font-black py-3 px-4 sm:py-3.5 sm:px-7 rounded-xl flex items-center justify-center space-x-2 transition-all uppercase tracking-[0.1em] shadow-[0_0_25px_rgba(255,51,51,0.5)] hover:shadow-[0_0_40px_rgba(255,51,51,0.8)] hover:-translate-y-1 group overflow-hidden border border-[#ff6666]/40"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1s_infinite]"></div>
-              <span>Book a session</span>
+              <span>Let's build something purposeful</span>
               <ArrowRight className="w-3.5 h-3.5 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             
