@@ -4,6 +4,7 @@ import WelcomeShowcase from '@/components/WelcomeShowcase';
 import ServicesSection from '@/components/ServicesSection';
 import CertificationsSection from '@/components/CertificationsSection';
 import ClientReviewCard from '@/components/ClientReviewCard';
+import TransitionsCard from '@/components/TransitionsCard';
 import FeedbackMarqueeSection from '@/components/FeedbackMarqueeSection';
 import Footer from '@/components/Footer';
 import { Play, ArrowRight, User, BarChart2, Settings, TrendingUp, Heart, Zap, Trophy, ChevronLeft, ChevronRight, Star } from 'lucide-react';
@@ -291,17 +292,8 @@ export default function Home() {
               {/* Card 2: Interactive Client Testimonials & Reviews */}
               <ClientReviewCard />
 
-              {/* Card 3: Men's Physique */}
-              <div className="relative rounded-2xl overflow-hidden aspect-[3/4] border border-[#ff3333]/50 shadow-[0_20px_50px_rgba(255,51,51,0.1)] group">
-                 <Image src="/client_2.jpg" alt="Men's Physique Overall Winner" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                 <div className="absolute inset-0 bg-gradient-to-t from-[#050101] via-[#050101]/40 to-transparent flex flex-col justify-end p-6 md:p-8">
-                    <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter mb-3 drop-shadow-md">Men's Physique</h3>
-                    <div className="flex items-center gap-2 text-[#ff3333]">
-                       <Trophy className="w-4 h-4" />
-                       <span className="text-xs font-black uppercase tracking-widest">Overall Winner</span>
-                    </div>
-                 </div>
-              </div>
+              {/* Card 3: Transition Card (Replaced Men's Physique) */}
+              <TransitionsCard />
             </div>
             
             {/* Stats Row */}
