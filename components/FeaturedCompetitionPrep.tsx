@@ -9,7 +9,7 @@ export default function FeaturedCompetitionPrep() {
   const competitionService = ALL_SERVICES[0]; // Competition Prep
 
   return (
-    <div className="relative overflow-hidden rounded-[2rem] bg-[#050101] border border-white/10 shadow-2xl mb-12 flex flex-col lg:flex-row min-h-[500px]">
+    <div className="relative overflow-hidden rounded-[2rem] bg-[#050101] border border-white/10 shadow-2xl flex flex-col lg:flex-row min-h-[500px]">
       
       {/* ========================================================
           DESKTOP VIEW (lg and above): 100% Identical to original 

@@ -31,6 +31,20 @@ export const REVIEWS_DATA: Testimonial[] = [
     ]
   },
   {
+    id: 'rachna-kedia',
+    name: 'Rachna Kedia',
+    tag: 'Strength & Knee Rehab • Hyrox Mumbai Athlete',
+    avatar: '/rachna_kedia_avatar.jpg',
+    rating: 5,
+    badge: 'Knee Care & Strength Progress',
+    salutation: 'Stronger, Confident & In Safe Hands',
+    paragraphs: [
+      "Coach Souvik has been instrumental in starting my journey towards fitness. Right from the beginning he was mindful of my requirements, and since I've always had trouble with my knee, he was extremely careful about it throughout my exercises, adjusting every movement so I never felt at risk.",
+      "He is patient, attentive and genuinely invested in his clients' progress. He explains why we do what we do, checks in on how I'm feeling, and never lets me get away with half a rep. His encouragement and consistency have kept me motivated, and I can honestly say I feel stronger and more confident because of him.",
+      "I'd recommend him wholeheartedly to anyone looking for a trainer who truly listens."
+    ]
+  },
+  {
     id: 'soham',
     name: 'Soham',
     tag: 'Aesthetic Transformation • 95 kg → 77 kg',
@@ -45,10 +59,38 @@ export const REVIEWS_DATA: Testimonial[] = [
     ]
   },
   {
+    id: 'vivek-parhi',
+    name: 'Vivek Parhi',
+    tag: 'Hypertrophy & Strength Client • 3 Months',
+    avatar: '/vivek_parhi_avatar.jpg',
+    rating: 5,
+    badge: '2kg Lean Muscle Gain in 3 Months',
+    salutation: 'They Teach You WHY You Are Doing It',
+    paragraphs: [
+      "I believe the difference between any coach and a GOOD coach is their ability to question and improve the standard, conventional training protocols according to the needs of their trainee.",
+      "That's exactly the kind of coach I'd like. The best coaches don't just tell you what to do. In three months of intense training, he helped me gain 2kg of lean muscle mass while boosting my strength capabilities in a way I never imagined possible.",
+      "It is rare to see a coach pay such attention to a trainee. In fact, he taught me many new concepts he had learned over the years. The best coaches don't just tell you what to do. They teach you WHY you are doing it."
+    ]
+  },
+  {
+    id: 'akash-mallick',
+    name: 'Akash Mallick',
+    tag: 'Heel Pain Rehab & Exercise Recovery',
+    avatar: '/akash_mallick_avatar.jpg',
+    rating: 5,
+    badge: 'Calcaneal Spur Rehab',
+    salutation: 'Able to Walk & Exercise Properly Again',
+    paragraphs: [
+      "First of all I would like to thank you Souvik da. Only because of you today I am able to walk properly to a great extent. Since last couple of weeks I had some pain issue in my heels and I was very worried about it.",
+      "I didn't understand what should I do, I was very scared that how it will be cured now. With your help I got to know about this heel problem which is also called as calcaneal spur. But by your consultation and proper guidance my heels are in much more better condition.",
+      "Whatever you said I did the same. I am very much thankful to you for those remedies you have told me. I'm very much lucky to have you as my coach as well as an elder brother and also a good friend. Now I can do my regular exercises properly."
+    ]
+  },
+  {
     id: 'pragna-johar',
     name: 'Pragna Johar',
     tag: 'Rehabilitation & Strength Client',
-    avatar: '/pragna_avatar.jpg',
+    avatar: '/pragna_johar_v3.jpg',
     rating: 5,
     badge: 'Knee Rehab • Avoided Surgery',
     salutation: 'Avoided Knee Surgery Through Strength',
@@ -76,7 +118,7 @@ export const REVIEWS_DATA: Testimonial[] = [
     id: 'supriya-swarup',
     name: 'Supriya Swarup',
     tag: 'Mental Health Counselor',
-    avatar: '/supriya_avatar.jpg',
+    avatar: '/supriya_swarup_avatar.jpg',
     rating: 5,
     badge: 'Trauma-Informed Strength Coaching',
     salutation: 'Movement Has Been Real Therapy',
@@ -118,7 +160,7 @@ export const REVIEWS_DATA: Testimonial[] = [
     id: 'rajesh-prasad',
     name: 'Rajesh Prasad',
     tag: 'Transformation Client',
-    avatar: '/client_1.jpg',
+    avatar: '/rajesh_prasad_avatar.jpg',
     rating: 5,
     badge: '1:1 Coaching & Back Pain Recovery',
     salutation: 'Hi Souvik,',

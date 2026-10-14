@@ -107,6 +107,18 @@ export default function Home() {
 
         {/* Remaining sections on page (order-4 on both mobile and desktop) */}
         <div className="order-4">
+          {/* Dedicated Transitions & Transformations Section - 100vh on all devices (Moved towards the beginning) */}
+          <section id="transitions" className="h-[100dvh] max-h-[100dvh] min-h-[100dvh] relative overflow-hidden bg-[#050101] border-t border-white/5 flex flex-col justify-center">
+            {/* Background Brand Watermark */}
+            <div className="absolute top-1/2 -translate-y-1/2 left-0 w-[150%] md:w-[120%] overflow-hidden pointer-events-none select-none z-0 flex justify-start opacity-[0.03]">
+               <span className="text-[12rem] md:text-[22rem] font-black text-[#ff3333] leading-none whitespace-nowrap tracking-tighter">TRANSITIONS</span>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 w-full h-full flex flex-col justify-between py-2 sm:py-3 md:py-4 relative z-10">
+              <TransitionsCollage />
+            </div>
+          </section>
+
           {/* Approach Section */}
           <section id="approach" className="py-20 md:py-32 relative overflow-hidden">
           {/* Background Brand Watermark */}
@@ -138,18 +150,28 @@ export default function Home() {
               {/* Image */}
               <div className="relative mt-auto w-full max-w-md self-start">
                 <div className="aspect-[4/3] relative rounded-3xl overflow-hidden border border-[#ff3333]/50 shadow-[0_0_40px_rgba(255,51,51,0.15)] group">
-                   <Image src="/coach_10.jpg" alt="Coach Souvik" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+                   <Image src="/approach_transformation.jpg" alt="Coach Souvik Transformation" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-700" priority />
                    {/* Inner dark vignette */}
                    <div className="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.8)] pointer-events-none"></div>
+
+                   {/* Before & After subtle corner markers */}
+                   <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 z-10 bg-black/75 backdrop-blur-md border border-white/15 px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-wider text-white/90">
+                     Before
+                   </div>
+                   <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 z-10 bg-black/80 backdrop-blur-md border border-[#ff3333]/50 px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-wider text-[#ff3333] shadow-[0_0_8px_rgba(255,51,51,0.4)]">
+                     After
+                   </div>
                 </div>
 
-                {/* Floating Badge (Bottom Right) */}
-                <div className="absolute -bottom-6 -right-6 md:-right-10 bg-[#0a0505]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl flex flex-col z-20 w-44">
-                  <div className="w-10 h-10 rounded-lg bg-[#ff3333] flex items-center justify-center mb-4 shadow-[0_5px_15px_rgba(255,51,51,0.4)]">
-                     <BarChart2 className="w-5 h-5 text-white" />
+                {/* Floating Badge (Bottom Left) - Compact & Horizontal so it never blocks the physique */}
+                <div className="absolute -bottom-4 left-2 sm:-left-4 md:-left-6 bg-[#0a0505]/95 backdrop-blur-xl border border-white/10 hover:border-[#ff3333]/40 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 shadow-2xl flex items-center gap-2.5 sm:gap-3 z-20 transition-all">
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#ff3333] flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(255,51,51,0.4)]">
+                     <BarChart2 className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
                   </div>
-                  <span className="text-white font-black text-lg leading-tight mb-1 uppercase tracking-wider">Real<br/>Progress</span>
-                  <span className="text-[#808080] text-[9px] font-bold tracking-[0.1em] uppercase leading-tight">Built on<br/>Discipline</span>
+                  <div className="flex flex-col">
+                    <span className="text-white font-black text-xs sm:text-sm leading-tight uppercase tracking-wider">Real Progress</span>
+                    <span className="text-[#808080] text-[8px] sm:text-[9px] font-bold tracking-[0.1em] uppercase leading-tight mt-0.5">Built on Discipline</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -343,17 +365,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Dedicated Transitions & Transformations Section - 100vh on all devices */}
-        <section id="transitions" className="h-[100dvh] max-h-[100dvh] min-h-[100dvh] relative overflow-hidden bg-[#050101] border-t border-white/5 flex flex-col justify-center">
-          {/* Background Brand Watermark */}
-          <div className="absolute top-1/2 -translate-y-1/2 left-0 w-[150%] md:w-[120%] overflow-hidden pointer-events-none select-none z-0 flex justify-start opacity-[0.03]">
-             <span className="text-[12rem] md:text-[22rem] font-black text-[#ff3333] leading-none whitespace-nowrap tracking-tighter">TRANSITIONS</span>
-          </div>
-
-          <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 w-full h-full flex flex-col justify-between py-2 sm:py-3 md:py-4 relative z-10">
-            <TransitionsCollage />
-          </div>
-        </section>
 
         {/* My Story Section */}
         <section className="py-32 relative overflow-hidden bg-[#050101] border-t border-white/5 min-h-[800px] flex items-center">
@@ -369,7 +380,7 @@ export default function Home() {
             <div className="relative w-full md:w-[25%] hidden md:block">
                {/* Handwritten Annotation */}
                <div className="absolute -top-20 -left-4 z-20 rotate-[-10deg]">
-                  <p className="font-['Caveat',cursive,sans-serif] text-2xl text-white/90 leading-tight">From a skinny kid<br/>in Kolkata</p>
+                  <p className="font-['Caveat',cursive,sans-serif] text-2xl text-white/90 leading-tight">Where it<br/>all began</p>
                   <svg className="w-12 h-12 text-white/70 absolute -bottom-8 -left-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg>
                   <div className="w-16 h-1 bg-[#ff3333] mt-1 rotate-[-2deg]"></div>
                </div>
@@ -392,21 +403,23 @@ export default function Home() {
                </div>
                
                <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-black uppercase tracking-tighter mb-10 text-white leading-[0.95]">
-                 I started with <br/>
-                 a question: <br/>
-                 <span className="text-[#ff3333] drop-shadow-[0_0_15px_rgba(255,51,51,0.3)] block mt-2">"How do I become <br/> a trainer?"</span>
+                 It started with <br/>
+                 changing myself. <br/>
+                 <span className="text-[#ff3333] drop-shadow-[0_0_15px_rgba(255,51,51,0.3)] block mt-2">
+                   It grew into <br/>
+                   something more.
+                 </span>
                </h2>
                
                <div className="space-y-6 text-sm md:text-base text-[#a0a0a0] leading-relaxed font-medium max-w-xl mx-auto">
                  <p>
-                   I was a skinny kid in Kolkata trying to figure out how to enter the fitness industry. I searched online, emailed gyms, turned up for interviews—and kept learning.
+                   I was relatively overweight growing up. In Class 12, I started taking fitness seriously, gradually getting leaner and learning through trial and error. With limited resources, the journey wasn't always straightforward.
                  </p>
                  <p>
-                   Seven years later, I'm still learning. The difference is that now I get to help other people navigate their own journey.
+                   As I grew, my goals changed. I wanted to build muscle, understand training better, and eventually find my place in the fitness industry.
                  </p>
-                 <p className="font-bold text-lg mt-8">
-                   <span className="text-white">This isn't a story about becoming perfect.</span><br/>
-                   <span className="text-[#ff3333] drop-shadow-[0_0_10px_rgba(255,51,51,0.2)]">It's about staying in the game long enough to get better at the work.</span>
+                 <p>
+                   I started looking for opportunities as a fitness trainer in Kolkata. Seven years later, I'm still learning—only now, I get to help others find their way, too.
                  </p>
                </div>
             </div>

@@ -41,11 +41,8 @@ export default function ServicesSection() {
           </div>
         </div>
         
-        {/* Featured Service Showcase: Competition Prep */}
-        <FeaturedCompetitionPrep />
-
         {/* The 6 Services Grid (2 columns on mobile, 3 columns on desktop) */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 mb-12 sm:mb-16">
           {gridServices.map((service) => (
             <ServiceCard 
               key={service.id}
@@ -53,6 +50,9 @@ export default function ServicesSection() {
             />
           ))}
         </div>
+
+        {/* Featured Service Showcase: Competition Prep (Placed below the 6 services) */}
+        <FeaturedCompetitionPrep />
 
       </div>
     </section>

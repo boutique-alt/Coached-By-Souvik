@@ -26,14 +26,14 @@ export default function Navbar() {
         
         {/* Center Links */}
         <nav className="hidden md:flex items-center space-x-8 lg:space-x-10">
-          <Link href="#services" className="text-[10px] font-bold tracking-widest uppercase text-white hover:text-white transition-colors relative group">
-            SERVICES
+          <Link href="#about" className="text-[10px] font-bold tracking-widest uppercase text-white/60 hover:text-white transition-colors">ABOUT</Link>
+          <Link href="#transitions" className="text-[10px] font-bold tracking-widest uppercase text-white hover:text-white transition-colors relative group">
+            TRANSITIONS
             <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-[#ff3333]"></span>
           </Link>
-          <Link href="#about" className="text-[10px] font-bold tracking-widest uppercase text-white/60 hover:text-white transition-colors">ABOUT</Link>
+          <Link href="#services" className="text-[10px] font-bold tracking-widest uppercase text-white/60 hover:text-white transition-colors">SERVICES</Link>
           <Link href="#certifications" className="text-[10px] font-bold tracking-widest uppercase text-white/60 hover:text-white transition-colors">CERTIFICATIONS</Link>
           <Link href="#results" className="text-[10px] font-bold tracking-widest uppercase text-white/60 hover:text-white transition-colors">RESULTS</Link>
-          <Link href="#transitions" className="text-[10px] font-bold tracking-widest uppercase text-white/60 hover:text-white transition-colors">TRANSITIONS</Link>
           <Link href="#contact" className="text-[10px] font-bold tracking-widest uppercase text-white/60 hover:text-white transition-colors">CONTACT</Link>
         </nav>
         

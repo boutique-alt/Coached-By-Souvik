@@ -29,6 +29,17 @@ const CERTIFICATES: Certificate[] = [
     tags: ['Physiotherapy', 'Rehabilitation', 'Biomechanics']
   },
   {
+    id: 'ad-biomechanics-kinesiology',
+    title: 'Biomechanics & Kinesiology Course',
+    institution: 'AD',
+    credentialType: 'Movement Science & Applied Biomechanics',
+    year: 'Certified',
+    achievement: 'Biomechanics & Kinesiology',
+    image: '/certificates/cert_ad_biomechanics.jpg',
+    description: 'Specialised coursework in human movement biomechanics, kinesiology, joint kinematics, and functional exercise mechanics.',
+    tags: ['Biomechanics', 'Kinesiology', 'Movement Science']
+  },
+  {
     id: 'boss-level2',
     title: 'Advanced Physique Transformation Master Trainer Level 2',
     institution: 'Team Boss Fitness Academy (BICP)',

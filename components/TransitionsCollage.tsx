@@ -115,6 +115,22 @@ export const TRANSFORMATION_ITEMS: TransformationItem[] = [
     thumbnail: '/transitions/thumb_5.jpg',
     story: 'Sculpted core definition and functional upper body strength through progressive resistance training.',
     tag: 'Core & Tone'
+  },
+  {
+    id: 'trans-6',
+    name: 'Sustainable Body Transformation',
+    category: 'FAT LOSS',
+    weightLost: '- 10 KG',
+    duration: '4 Months',
+    beforeWeight: '108 KG',
+    afterWeight: '98 KG',
+    showcaseImg: '/transitions/showcase_6.jpg',
+    beforeImg: '/gallery/trans_108kg_before.jpg',
+    afterImg: '/gallery/trans_98kg_after.jpg',
+    splitImg: '/transitions/showcase_6.jpg',
+    thumbnail: '/transitions/thumb_6.jpg',
+    story: 'From 108 kg down to 98 kg with visible muscle definition and boosted strength through structured, sustainable coaching.',
+    tag: '108 KG → 98 KG'
   }
 ];
 
@@ -338,16 +354,16 @@ export default function TransitionsCollage() {
 
             {/* ========================================================
                 BOTTOM ROW: Large & Clear Transformation Cards
-                Mobile: Smooth swipeable cards (w-36 h-28), Desktop: Centered 5 cards row
+                Mobile: Smooth swipeable cards (w-36 h-28), Desktop: Centered 6 cards row
                ======================================================== */}
-            <div className="flex overflow-x-auto md:overflow-visible md:justify-center md:items-center gap-2.5 sm:gap-3 md:gap-3.5 lg:gap-4 shrink-0 py-1 scrollbar-none snap-x w-full max-w-5xl mx-auto">
+            <div className="flex overflow-x-auto md:overflow-visible md:justify-center md:items-center gap-2.5 sm:gap-3 md:gap-3 lg:gap-3.5 shrink-0 py-1 scrollbar-none snap-x w-full max-w-6xl mx-auto">
               {TRANSFORMATION_ITEMS.map((card, idx) => {
                 const isSelected = activeItem.id === card.id;
                 return (
                   <div
                     key={card.id}
                     onClick={() => setCurrentIndex(idx)}
-                    className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 flex flex-col bg-[#0f0505] w-[140px] sm:w-[160px] md:w-[165px] lg:w-[185px] xl:w-[195px] h-[105px] sm:h-[115px] md:h-[130px] lg:h-[142px] shrink-0 snap-start group ${
+                    className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 flex flex-col bg-[#0f0505] w-[140px] sm:w-[160px] md:w-[145px] lg:w-[160px] xl:w-[172px] h-[105px] sm:h-[115px] md:h-[125px] lg:h-[136px] shrink-0 snap-start group ${
                       isSelected
                         ? 'border-2 border-[#ff3333] shadow-[0_0_20px_rgba(255,51,51,0.6)] scale-[1.03]'
                         : 'border border-white/10 hover:border-[#ff3333]/60 hover:scale-[1.02]'
