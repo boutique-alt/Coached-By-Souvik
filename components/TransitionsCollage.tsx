@@ -26,9 +26,10 @@ export interface TransformationItem {
   duration: string;
   beforeWeight: string;
   afterWeight: string;
+  showcaseImg: string;
   beforeImg: string;
   afterImg: string;
-  splitImg?: string;
+  splitImg: string;
   thumbnail: string;
   story: string;
   tag: string;
@@ -37,90 +38,83 @@ export interface TransformationItem {
 export const TRANSFORMATION_ITEMS: TransformationItem[] = [
   {
     id: 'trans-1',
-    name: 'Aesthetic Recomp & 30 KG Drop',
+    name: 'Fat Loss & Silhouette Recomp',
     category: 'FAT LOSS',
-    weightLost: '- 30 KG',
+    weightLost: '- 27 KG',
     duration: '6 Months',
     beforeWeight: '116 KG',
-    afterWeight: '86 KG',
-    beforeImg: '/transitions/clean_feat_before.jpg',
-    afterImg: '/transitions/clean_feat_after.jpg',
-    splitImg: '/transitions/feat_perfect.jpg',
-    thumbnail: '/transitions/card_thumb_2.jpg',
-    story: 'From 116 kg to 86 kg with razor-sharp core definition and sculpted shoulders through progressive overload and structured nutrition.',
-    tag: 'Fat Loss & Core Sculpt'
+    afterWeight: '89 KG',
+    showcaseImg: '/transitions/showcase_1.jpg',
+    beforeImg: '/transitions/c1_before.jpg',
+    afterImg: '/transitions/c1_after.jpg',
+    splitImg: '/transitions/c1_composite.jpg',
+    thumbnail: '/transitions/thumb_1.jpg',
+    story: 'From 116 kg down to 89 kg with dense muscular definition through progressive overload and structured nutrition.',
+    tag: '116 KG → 89 KG'
   },
   {
     id: 'trans-2',
-    name: 'Sustainable Lifestyle Recomp',
+    name: 'Sustainable Lifestyle Transformation',
     category: 'BODY RECOMPOSITION',
-    weightLost: '- 18 KG',
+    weightLost: '- 22 KG',
     duration: '7.5 Months',
     beforeWeight: '98 KG',
-    afterWeight: '80 KG',
-    beforeImg: '/transitions/transition_2.jpg',
-    afterImg: '/transitions/transition_2.jpg',
-    thumbnail: '/transitions/card_thumb_1.jpg',
-    story: 'Dropped from 98 kg to 80 kg in 7.5 months without starving. Solid lean muscle preservation and restored daily stamina.',
-    tag: 'Sustainable Body Recomp'
+    afterWeight: '76 KG',
+    showcaseImg: '/transitions/showcase_2.jpg',
+    beforeImg: '/transitions/c2_before.jpg',
+    afterImg: '/transitions/c2_after.jpg',
+    splitImg: '/transitions/c2_composite.jpg',
+    thumbnail: '/transitions/thumb_2.jpg',
+    story: 'Dropped from 98 kg to 76 kg in 7.5 months without starvation diets. Rebuilt energy, stamina, and daily habits.',
+    tag: '98 KG → 76 KG'
   },
   {
     id: 'trans-3',
-    name: 'Athletic Lean Bulk to Shred',
-    category: 'MUSCLE GAIN',
-    weightLost: '- 12 KG',
-    duration: '5 Months',
-    beforeWeight: '88 KG',
-    afterWeight: '76 KG',
-    beforeImg: '/transitions/card_thumb_3.jpg',
-    afterImg: '/transitions/card_thumb_3.jpg',
-    thumbnail: '/transitions/card_thumb_3.jpg',
-    story: 'Focused hypertrophy period followed by disciplined cutting. Gained dense chest, capped deltoids, and deep abdominal etching.',
-    tag: 'Hypertrophy & Shred'
-  },
-  {
-    id: 'trans-4',
-    name: 'Arms & Upper Body Power',
-    category: 'STRENGTH',
-    weightLost: '- 15 KG',
-    duration: '4 Months',
-    beforeWeight: '95 KG',
-    afterWeight: '80 KG',
-    beforeImg: '/transitions/card_thumb_4.jpg',
-    afterImg: '/transitions/card_thumb_4.jpg',
-    thumbnail: '/transitions/card_thumb_4.jpg',
-    story: 'Specialised strength periodisation. Major arm circumference growth and chest density while cutting 15 kg of visceral fat.',
-    tag: 'Upper Body Power'
-  },
-  {
-    id: 'trans-5',
-    name: "Men's Physique Contest Athlete",
+    name: "Men's Physique Competition Athlete",
     category: 'MUSCLE GAIN',
     weightLost: 'Stage Ready',
     duration: '8 Months',
-    beforeWeight: 'Offseason',
-    afterWeight: 'Contest #293',
-    beforeImg: '/transitions/transition_5_before.jpg',
-    afterImg: '/transitions/transition_5_after.jpg',
-    splitImg: '/transitions/transition_5_composite.jpg',
-    thumbnail: '/transitions/transition_5_after.jpg',
-    story: "From gym bulking to competing on the Men's Physique stage in competition board shorts. Peak conditioning and stage presentation.",
-    tag: "Men's Physique Winner"
+    beforeWeight: 'Bulk',
+    afterWeight: '#293 Stage',
+    showcaseImg: '/transitions/showcase_3.jpg',
+    beforeImg: '/transitions/c3_before.jpg',
+    afterImg: '/transitions/c3_after.jpg',
+    splitImg: '/transitions/c3_composite.jpg',
+    thumbnail: '/transitions/thumb_3.jpg',
+    story: "From gym bulking to competing on the Men's Physique stage in competition board shorts with peak conditioning.",
+    tag: "Men's Physique"
   },
   {
-    id: 'trans-6',
-    name: 'Female Core & Waist Sculpting',
+    id: 'trans-4',
+    name: 'Female Lifestyle Waistline Recomp',
     category: 'BODY RECOMPOSITION',
     weightLost: '- 14 KG',
     duration: '6 Months',
-    beforeWeight: 'Before',
-    afterWeight: 'After',
-    beforeImg: '/transitions/transition_3_before.jpg',
-    afterImg: '/transitions/transition_3_after.jpg',
-    splitImg: '/transitions/transition_3_composite.jpg',
-    thumbnail: '/transitions/transition_3_after.jpg',
-    story: 'Dramatic waistline tapering and hourglass athletic posture achieved with tailored biomechanics and trauma-informed training.',
-    tag: 'Lifestyle Body Recomp'
+    beforeWeight: 'Day 1',
+    afterWeight: 'Tapered',
+    showcaseImg: '/transitions/showcase_4.jpg',
+    beforeImg: '/transitions/c4_before.jpg',
+    afterImg: '/transitions/c4_after.jpg',
+    splitImg: '/transitions/c4_composite.jpg',
+    thumbnail: '/transitions/thumb_4.jpg',
+    story: 'Noticeable silhouette tapering and waist reduction wearing the same signature dress with tailored biomechanics.',
+    tag: 'Waistline Taper'
+  },
+  {
+    id: 'trans-5',
+    name: 'Female Core & Athletic Tone',
+    category: 'STRENGTH',
+    weightLost: 'Toned Abs',
+    duration: '5 Months',
+    beforeWeight: 'Start',
+    afterWeight: 'Sculpted',
+    showcaseImg: '/transitions/showcase_5.jpg',
+    beforeImg: '/transitions/c5_before.jpg',
+    afterImg: '/transitions/c5_after.jpg',
+    splitImg: '/transitions/c5_composite.jpg',
+    thumbnail: '/transitions/thumb_5.jpg',
+    story: 'Sculpted core definition and functional upper body strength through progressive resistance training.',
+    tag: 'Core & Tone'
   }
 ];
 
@@ -193,67 +187,65 @@ export default function TransitionsCollage() {
   }, [isDragging, handlePointerMove]);
 
   return (
-    <div className="w-full relative">
+    <div className="w-full h-full relative flex flex-col justify-between">
       {/* Outer Glow Container matching reference styling */}
-      <div className="relative rounded-[2rem] sm:rounded-[2.5rem] bg-[#070202] border border-[#ff3333]/40 shadow-[0_0_60px_rgba(255,51,51,0.22)] p-5 sm:p-8 md:p-10 overflow-hidden font-sans select-none">
+      <div className="relative rounded-2xl sm:rounded-3xl bg-[#070202] border border-[#ff3333]/40 shadow-[0_0_50px_rgba(255,51,51,0.2)] p-2.5 sm:p-4 md:p-5 overflow-hidden font-sans select-none h-full flex flex-col justify-between">
         
-        {/* Ambient Red Smoke & Light flares in corners (Exact reference aesthetics) */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[radial-gradient(circle_at_top_left,_rgba(255,51,51,0.35)_0%,_transparent_70%)] pointer-events-none blur-3xl z-0"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(circle_at_top_right,_rgba(255,51,51,0.35)_0%,_transparent_70%)] pointer-events-none blur-3xl z-0"></div>
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-48 bg-[radial-gradient(ellipse_at_bottom,_rgba(255,51,51,0.18)_0%,_transparent_75%)] pointer-events-none blur-2xl z-0"></div>
+        {/* Ambient Red Smoke & Light flares in corners */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-[radial-gradient(circle_at_top_left,_rgba(255,51,51,0.35)_0%,_transparent_70%)] pointer-events-none blur-3xl z-0"></div>
+        <div className="absolute top-0 right-0 w-72 h-72 bg-[radial-gradient(circle_at_top_right,_rgba(255,51,51,0.35)_0%,_transparent_70%)] pointer-events-none blur-3xl z-0"></div>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-32 bg-[radial-gradient(ellipse_at_bottom,_rgba(255,51,51,0.18)_0%,_transparent_75%)] pointer-events-none blur-2xl z-0"></div>
 
         {/* ========================================================
             TOP BAR: Tabs on Left, Counter & Arrow Navigation on Right
            ======================================================== */}
-        <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 mb-8 sm:mb-10">
+        <div className="relative z-10 flex items-center justify-between gap-3 shrink-0 mb-1 sm:mb-2">
           
           {/* Left Pill Switchers */}
-          <div className="flex items-center gap-3">
-            {/* Active TRANSITION Tab */}
+          <div className="flex items-center gap-2">
             <button
               onClick={() => setActiveTab('transition')}
-              className={`px-5 sm:px-6 py-2.5 rounded-full font-black text-xs uppercase tracking-widest flex items-center gap-2 transition-all cursor-pointer ${
+              className={`px-3.5 sm:px-5 py-1.5 rounded-full font-black text-[10px] sm:text-xs uppercase tracking-widest flex items-center gap-1.5 transition-all cursor-pointer ${
                 activeTab === 'transition'
-                  ? 'bg-gradient-to-r from-[#2a0707] to-[#1a0505] border border-[#ff3333] text-white shadow-[0_0_20px_rgba(255,51,51,0.6)]'
-                  : 'bg-[#140808] border border-white/10 text-white/70 hover:text-white hover:border-white/30'
+                  ? 'bg-gradient-to-r from-[#2a0707] to-[#1a0505] border border-[#ff3333] text-white shadow-[0_0_15px_rgba(255,51,51,0.6)]'
+                  : 'bg-[#140808] border border-white/10 text-white/70 hover:text-white'
               }`}
             >
-              <Flame className="w-4 h-4 text-[#ff3333] fill-[#ff3333]" />
+              <Flame className="w-3.5 h-3.5 text-[#ff3333] fill-[#ff3333]" />
               <span>TRANSITION</span>
             </button>
 
-            {/* COLLAGE VIEW Tab */}
             <button
               onClick={() => setActiveTab('collage')}
-              className={`px-5 sm:px-6 py-2.5 rounded-full font-black text-xs uppercase tracking-widest flex items-center gap-2 transition-all cursor-pointer ${
+              className={`px-3.5 sm:px-5 py-1.5 rounded-full font-black text-[10px] sm:text-xs uppercase tracking-widest flex items-center gap-1.5 transition-all cursor-pointer ${
                 activeTab === 'collage'
-                  ? 'bg-gradient-to-r from-[#2a0707] to-[#1a0505] border border-[#ff3333] text-white shadow-[0_0_20px_rgba(255,51,51,0.6)]'
-                  : 'bg-[#140808] border border-white/10 text-white/70 hover:text-white hover:border-white/30'
+                  ? 'bg-gradient-to-r from-[#2a0707] to-[#1a0505] border border-[#ff3333] text-white shadow-[0_0_15px_rgba(255,51,51,0.6)]'
+                  : 'bg-[#140808] border border-white/10 text-white/70 hover:text-white'
               }`}
             >
-              <LayoutGrid className="w-4 h-4 text-white/60" />
+              <LayoutGrid className="w-3.5 h-3.5 text-white/60" />
               <span>COLLAGE VIEW</span>
             </button>
           </div>
 
           {/* Right Counter & Arrows */}
-          <div className="flex items-center gap-3">
-            <span className="text-white font-black text-xs sm:text-sm tracking-widest mr-1">
+          <div className="flex items-center gap-2">
+            <span className="text-white font-black text-[11px] sm:text-xs tracking-widest mr-0.5">
               {currentIndex + 1} / {TRANSFORMATION_ITEMS.length}
             </span>
             <button
               onClick={handlePrev}
               aria-label="Previous Transformation"
-              className="w-9 h-9 rounded-full bg-[#180808] hover:bg-[#ff3333] border border-white/15 hover:border-[#ff3333] text-white flex items-center justify-center transition-all cursor-pointer shadow-md hover:shadow-[0_0_15px_rgba(255,51,51,0.5)]"
+              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#180808] hover:bg-[#ff3333] border border-white/15 hover:border-[#ff3333] text-white flex items-center justify-center transition-all cursor-pointer shadow-md"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-3.5 h-3.5" />
             </button>
             <button
               onClick={handleNext}
               aria-label="Next Transformation"
-              className="w-9 h-9 rounded-full bg-[#180808] hover:bg-[#ff3333] border border-white/15 hover:border-[#ff3333] text-white flex items-center justify-center transition-all cursor-pointer shadow-md hover:shadow-[0_0_15px_rgba(255,51,51,0.5)]"
+              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#180808] hover:bg-[#ff3333] border border-white/15 hover:border-[#ff3333] text-white flex items-center justify-center transition-all cursor-pointer shadow-md"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>
@@ -262,250 +254,132 @@ export default function TransitionsCollage() {
             VIEW MODE 1: TRANSITION VIEW (Exact Mockup Layout)
            ======================================================== */}
         {activeTab === 'transition' && (
-          <div className="relative z-10 flex flex-col">
+          <div className="relative z-10 flex flex-col flex-1 min-h-0 justify-between">
             
-            {/* Middle Grid: Left Text/Stats + Right Interactive Before/After Split */}
-            <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center mb-10">
-              
-              {/* Left Column (5 Cols): Eyebrow, Big Headline, Stats Box, View Collage Button */}
-              <div className="lg:col-span-5 flex flex-col justify-center">
-                
-                {/* Eyebrow */}
-                <div className="flex items-center gap-2.5 text-white/80 text-[10px] sm:text-xs font-black tracking-[0.25em] uppercase mb-3">
-                  <span>REAL PEOPLE</span>
-                  <span className="text-[#ff3333] font-black text-sm">✕</span>
-                  <span>REAL JOURNEY</span>
+            {/* Center Showcase: Uncropped Interactive Before/After Split Slider */}
+            <div className="flex-1 min-h-0 flex items-center justify-center my-auto w-full">
+              <div 
+                ref={sliderRef}
+                onMouseDown={onMouseDown}
+                onTouchStart={onMouseDown}
+                className="relative w-full max-w-4xl lg:max-w-4xl aspect-[16/10] max-h-[380px] sm:max-h-[440px] md:max-h-[430px] lg:max-h-[460px] mx-auto rounded-xl sm:rounded-2xl overflow-hidden border border-white/15 bg-black shadow-2xl cursor-ew-resize group/slider select-none"
+              >
+                {/* Ambient Blurred Backdrop for edge beauty */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  <Image
+                    src={activeItem.showcaseImg}
+                    alt=""
+                    fill
+                    className="object-cover blur-2xl scale-110 opacity-30 md:opacity-15"
+                  />
                 </div>
 
-                {/* Massive Bold Headline */}
-                <h3 className="text-4xl sm:text-5xl lg:text-[4rem] font-black uppercase tracking-tight leading-[0.88] text-white mb-2">
-                  TRANSITIONS
-                  <span className="block text-[#ff3333] drop-shadow-[0_0_30px_rgba(255,51,51,0.6)]">
-                    COLLAGE
+                {/* Clean Authentic Client Split Image - Pure Uncropped */}
+                <div className="relative w-full h-full">
+                  <Image
+                    src={activeItem.showcaseImg}
+                    alt={activeItem.name}
+                    fill
+                    priority
+                    className="object-contain object-center"
+                  />
+                </div>
+
+                {/* Top-Right Category / Tag Pill */}
+                <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 z-20 bg-black/85 backdrop-blur-md border border-[#ff3333]/40 px-2.5 py-0.5 sm:py-1 rounded-full pointer-events-none">
+                  <span className="text-[#ff3333] font-black text-[9px] sm:text-[10px] uppercase tracking-wider block leading-none">
+                    {activeItem.tag}
                   </span>
-                </h3>
-
-                {/* Subtitle */}
-                <p className="text-[#a0a0a0] text-xs sm:text-sm font-medium mt-2 mb-6 leading-snug max-w-sm">
-                  Real People. Tailored Science.<br />
-                  Real Results.
-                </p>
-
-                {/* Stats Container (Rounded Dark Card with 3 Metrics) */}
-                <div className="rounded-2xl bg-[#0e0505]/95 border border-white/10 p-5 space-y-4 mb-7 shadow-2xl backdrop-blur-md max-w-md">
-                  
-                  {/* Metric 1 */}
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-9 h-9 rounded-xl bg-[#ff3333]/15 border border-[#ff3333]/40 flex items-center justify-center text-[#ff3333] shrink-0 shadow-[0_0_15px_rgba(255,51,51,0.2)]">
-                      <Users className="w-5 h-5 text-[#ff3333]" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-black text-lg leading-tight">100+</h4>
-                      <p className="text-[#999] text-[11px] font-semibold tracking-wide">Client Transformations</p>
-                    </div>
-                  </div>
-
-                  {/* Metric 2 */}
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-9 h-9 rounded-xl bg-[#ff3333]/15 border border-[#ff3333]/40 flex items-center justify-center text-[#ff3333] shrink-0 shadow-[0_0_15px_rgba(255,51,51,0.2)]">
-                      <BarChart2 className="w-5 h-5 text-[#ff3333]" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-black text-lg leading-tight">7.5 Months</h4>
-                      <p className="text-[#999] text-[11px] font-semibold tracking-wide">Average Progress Time</p>
-                    </div>
-                  </div>
-
-                  {/* Metric 3 */}
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-9 h-9 rounded-xl bg-[#ff3333]/15 border border-[#ff3333]/40 flex items-center justify-center text-[#ff3333] shrink-0 shadow-[0_0_15px_rgba(255,51,51,0.2)]">
-                      <Star className="w-5 h-5 text-[#ff3333] fill-[#ff3333]" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-black text-lg leading-tight">Real & Natural</h4>
-                      <p className="text-[#999] text-[11px] font-semibold tracking-wide">Results</p>
-                    </div>
-                  </div>
                 </div>
 
-                {/* View Full Collage Button */}
-                <div>
-                  <button
-                    onClick={() => setIsModalOpen(true)}
-                    className="inline-flex items-center space-x-3 text-white bg-gradient-to-r from-[#ff3333] to-[#cc0000] hover:from-[#ff4d4d] hover:to-[#e60000] px-8 py-4 rounded-full font-black uppercase tracking-wider text-xs shadow-[0_0_30px_rgba(255,51,51,0.5)] hover:shadow-[0_0_45px_rgba(255,51,51,0.8)] hover:-translate-y-0.5 transition-all cursor-pointer group"
-                  >
-                    <span>VIEW FULL COLLAGE</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
+                {/* Top-Center Instruction */}
+                <div className="absolute top-2.5 left-1/2 -translate-x-1/2 sm:top-3 z-20 bg-black/75 backdrop-blur-md border border-white/10 px-2.5 py-0.5 sm:py-1 rounded-full text-[9px] font-bold text-white/80 uppercase tracking-widest flex items-center gap-1 pointer-events-none">
+                  <Sparkles className="w-3 h-3 text-[#ff3333]" />
+                  <span>Drag to Compare</span>
                 </div>
-              </div>
 
-              {/* Right Column (7 Cols): The Large Interactive Before / After Split Slider */}
-              <div className="lg:col-span-7">
+                {/* Conditional Floating Labels: Hide for Client 1 whose image already has baked-in labels */}
+                {activeItem.id !== 'trans-1' && (
+                  <>
+                    {/* Left Label: BEFORE Weight */}
+                    <div className="absolute bottom-2.5 left-2.5 sm:bottom-4 sm:left-4 z-20 pointer-events-none drop-shadow-lg">
+                      <span className="text-white font-black text-sm sm:text-xl uppercase tracking-wider block leading-none">
+                        BEFORE
+                      </span>
+                      <span className="text-white/80 font-bold text-[9px] sm:text-xs uppercase tracking-widest block leading-none mt-1">
+                        {activeItem.beforeWeight}
+                      </span>
+                    </div>
+
+                    {/* Right Label: AFTER Weight */}
+                    <div className="absolute bottom-2.5 right-2.5 sm:bottom-4 sm:right-4 z-20 pointer-events-none text-right drop-shadow-lg">
+                      <span className="text-[#ff3333] font-black text-sm sm:text-xl uppercase tracking-wider block drop-shadow-[0_0_12px_rgba(255,51,51,0.7)] leading-none">
+                        AFTER
+                      </span>
+                      <span className="text-white font-bold text-[9px] sm:text-xs uppercase tracking-widest block leading-none mt-1">
+                        {activeItem.afterWeight}
+                      </span>
+                    </div>
+                  </>
+                )}
+
+                {/* Central Vertical Divider Line & Slider Circle Handle */}
                 <div 
-                  ref={sliderRef}
-                  onMouseDown={onMouseDown}
-                  onTouchStart={onMouseDown}
-                  className="relative h-[420px] sm:h-[480px] md:h-[530px] rounded-2xl overflow-hidden border border-white/15 bg-black shadow-[0_20px_50px_rgba(0,0,0,0.9)] cursor-ew-resize group/slider"
+                  className="absolute top-0 bottom-0 z-30 pointer-events-none transition-all duration-75"
+                  style={{ left: `${sliderPos}%` }}
                 >
-                  {/* If active item has a dedicated split composite image like feat_perfect.jpg */}
-                  {activeItem.id === 'trans-1' && activeItem.splitImg ? (
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={activeItem.splitImg}
-                        alt="Transformation Comparison"
-                        fill
-                        priority
-                        className="object-cover object-center"
-                      />
-                      {/* Dynamic Interactive Split Overlay using clipPath */}
-                      <div 
-                        className="absolute inset-0 pointer-events-none"
-                        style={{
-                          clipPath: `polygon(0 0, ${sliderPos}% 0, ${sliderPos}% 100%, 0 100%)`
-                        }}
-                      >
-                        <div className="relative w-full h-full">
-                          <Image
-                            src="/transitions/clean_feat_before.jpg"
-                            alt="Before Transformation"
-                            fill
-                            className="object-cover object-left"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Right After Portion */}
-                      <div 
-                        className="absolute inset-0 pointer-events-none"
-                        style={{
-                          clipPath: `polygon(${sliderPos}% 0, 100% 0, 100% 100%, ${sliderPos}% 100%)`
-                        }}
-                      >
-                        <div className="relative w-full h-full">
-                          <Image
-                            src="/transitions/clean_feat_after.jpg"
-                            alt="After Transformation"
-                            fill
-                            className="object-cover object-right"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  ) : (
-                    /* Default Dynamic Split Slider for other items */
-                    <div className="relative w-full h-full">
-                      {/* After Image (Full background) */}
-                      <Image
-                        src={activeItem.afterImg}
-                        alt={`${activeItem.name} After`}
-                        fill
-                        className="object-cover object-center"
-                      />
-                      {/* Before Image (Clipped Left portion) */}
-                      <div 
-                        className="absolute inset-0"
-                        style={{
-                          clipPath: `polygon(0 0, ${sliderPos}% 0, ${sliderPos}% 100%, 0 100%)`
-                        }}
-                      >
-                        <Image
-                          src={activeItem.beforeImg}
-                          alt={`${activeItem.name} Before`}
-                          fill
-                          className="object-cover object-center"
-                        />
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Top Subtle Gradients for contrast */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none"></div>
-
-                  {/* Left Label: BEFORE 116 KG */}
-                  <div className="absolute bottom-6 left-6 z-20 pointer-events-none drop-shadow-lg">
-                    <span className="text-white font-black text-xl sm:text-2xl uppercase tracking-wider block">
-                      BEFORE
-                    </span>
-                    <span className="text-white/80 font-black text-xs sm:text-sm uppercase tracking-widest block">
-                      {activeItem.beforeWeight}
-                    </span>
-                  </div>
-
-                  {/* Right Label: AFTER 86 KG */}
-                  <div className="absolute bottom-6 right-6 z-20 pointer-events-none text-right drop-shadow-lg">
-                    <span className="text-[#ff3333] font-black text-xl sm:text-2xl uppercase tracking-wider block drop-shadow-[0_0_15px_rgba(255,51,51,0.6)]">
-                      AFTER
-                    </span>
-                    <span className="text-white font-black text-xs sm:text-sm uppercase tracking-widest block">
-                      {activeItem.afterWeight}
-                    </span>
-                  </div>
-
-                  {/* Central Vertical Divider Line & Slider Circle Handle */}
-                  <div 
-                    className="absolute top-0 bottom-0 z-30 pointer-events-none transition-all duration-75"
-                    style={{ left: `${sliderPos}%` }}
-                  >
-                    {/* Glowing Red Vertical Line */}
-                    <div className="absolute inset-y-0 -left-[1.5px] w-[3px] bg-[#ff3333] shadow-[0_0_15px_3px_rgba(255,51,51,0.9)]"></div>
-                    
-                    {/* Circular Red Slider Handle with <> */}
-                    <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-[#8b0000] border-2 border-white/90 shadow-[0_0_25px_rgba(255,51,51,1)] flex items-center justify-center text-white pointer-events-auto cursor-ew-resize group-hover/slider:scale-110 transition-transform">
-                      <ChevronsLeftRight className="w-5 h-5 text-white" />
-                    </div>
-                  </div>
-
-                  {/* Subtle Top-Center Tag */}
-                  <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20 bg-black/70 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-[10px] font-bold text-white/80 uppercase tracking-widest flex items-center gap-1.5">
-                    <Sparkles className="w-3 h-3 text-[#ff3333]" />
-                    <span>Drag Slider to Compare</span>
+                  <div className="absolute inset-y-0 -left-[1.5px] w-[3px] bg-[#ff3333] shadow-[0_0_15px_3px_rgba(255,51,51,0.9)]"></div>
+                  <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#8b0000] border-2 border-white/90 shadow-[0_0_20px_rgba(255,51,51,1)] flex items-center justify-center text-white pointer-events-auto cursor-ew-resize group-hover/slider:scale-110 transition-transform">
+                    <ChevronsLeftRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                   </div>
                 </div>
               </div>
-
             </div>
 
             {/* ========================================================
-                BOTTOM ROW: 4 Thumbnail Transformation Cards
+                BOTTOM ROW: Large & Clear Transformation Cards
+                Mobile: Smooth swipeable cards (w-36 h-28), Desktop: Centered 5 cards row
                ======================================================== */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-6">
-              {TRANSFORMATION_ITEMS.slice(0, 4).map((card, idx) => {
+            <div className="flex overflow-x-auto md:overflow-visible md:justify-center md:items-center gap-2.5 sm:gap-3 md:gap-3.5 lg:gap-4 shrink-0 py-1 scrollbar-none snap-x w-full max-w-5xl mx-auto">
+              {TRANSFORMATION_ITEMS.map((card, idx) => {
                 const isSelected = activeItem.id === card.id;
                 return (
                   <div
                     key={card.id}
                     onClick={() => setCurrentIndex(idx)}
-                    className={`relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 flex flex-col bg-[#0f0505] aspect-[4/5] sm:aspect-[3/4] group ${
+                    className={`relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 flex flex-col bg-[#0f0505] w-[140px] sm:w-[160px] md:w-[165px] lg:w-[185px] xl:w-[195px] h-[105px] sm:h-[115px] md:h-[130px] lg:h-[142px] shrink-0 snap-start group ${
                       isSelected
-                        ? 'border-2 border-[#ff3333] shadow-[0_0_25px_rgba(255,51,51,0.5)] scale-[1.02]'
-                        : 'border border-white/10 hover:border-[#ff3333]/60 hover:scale-[1.01]'
+                        ? 'border-2 border-[#ff3333] shadow-[0_0_20px_rgba(255,51,51,0.6)] scale-[1.03]'
+                        : 'border border-white/10 hover:border-[#ff3333]/60 hover:scale-[1.02]'
                     }`}
                   >
-                    {/* Main Image */}
-                    <div className="relative flex-1 w-full overflow-hidden">
+                    {/* Main Image Container */}
+                    <div className="relative flex-1 w-full overflow-hidden bg-black">
                       <Image
                         src={card.thumbnail}
                         alt={card.name}
                         fill
-                        sizes="(max-width: 768px) 50vw, 25vw"
-                        className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 140px, 200px"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60"></div>
                       
-                      {/* Floating Badge (e.g. - 18 KG) */}
-                      <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 z-10">
-                        <span className="bg-black/90 backdrop-blur-md border border-white/20 text-white font-black text-[10px] sm:text-xs px-3 py-1 rounded-full shadow-lg whitespace-nowrap block">
+                      {/* Floating Badge (Top-Right): Clean & Never Overlaps Subject */}
+                      <div className="absolute top-1.5 right-1.5 z-10">
+                        <span className="bg-black/90 backdrop-blur-md border border-[#ff3333]/50 text-[#ff3333] font-black text-[9px] sm:text-[10px] md:text-[11px] px-2 py-0.5 rounded-md shadow-md whitespace-nowrap block leading-none">
                           {card.weightLost}
                         </span>
                       </div>
                     </div>
 
-                    {/* Bottom Red Footer Bar (e.g. ⏳ 7.5 Months) */}
-                    <div className="bg-gradient-to-r from-[#8a0f0f] via-[#b31414] to-[#8a0f0f] text-white py-2 px-2 flex items-center justify-center gap-1.5 shrink-0 border-t border-[#ff3333]/40">
-                      <Hourglass className="w-3.5 h-3.5 text-white/90" />
-                      <span className="font-black text-[10px] sm:text-xs uppercase tracking-wider leading-none">
-                        {card.duration}
+                    {/* Bottom Information Footer Bar */}
+                    <div className="bg-[#140606] border-t border-[#ff3333]/30 py-1 md:py-1.5 px-2 md:px-2.5 flex items-center justify-between gap-1 shrink-0 text-white">
+                      <span className="text-[9px] sm:text-[10px] md:text-[11px] font-black text-white/90 truncate max-w-[70%]">
+                        {card.tag}
+                      </span>
+                      <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-[#ff3333] flex items-center gap-1 shrink-0">
+                        <Hourglass className="w-2.5 h-2.5 md:w-3 md:h-3 text-[#ff3333]" />
+                        <span>{card.duration}</span>
                       </span>
                     </div>
                   </div>
@@ -517,21 +391,28 @@ export default function TransitionsCollage() {
                 BOTTOM FILTER BAR & NAVIGATION:
                 Progress indicator + Category pills + Arrows
                ======================================================== */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-5 pt-4 border-t border-white/10">
+            <div className="flex items-center justify-between gap-2 pt-1.5 border-t border-white/10 shrink-0 w-full max-w-5xl mx-auto">
               
-              {/* Category Filter Buttons */}
-              <div className="flex flex-wrap items-center gap-4 sm:gap-6 justify-center sm:justify-start">
-                {/* Red Indicator Pill */}
-                <div className="w-12 h-1 bg-[#ff3333] rounded-full shadow-[0_0_10px_#ff3333] hidden sm:block"></div>
+              {/* Category Filter Buttons - Scrollable on mobile without wrapping */}
+              <div className="flex items-center gap-2 sm:gap-4 overflow-x-auto scrollbar-none py-0.5">
+                <div className="w-6 h-1 bg-[#ff3333] rounded-full shadow-[0_0_8px_#ff3333] shrink-0 hidden sm:block"></div>
 
                 {CATEGORIES.map((cat) => (
                   <button
                     key={cat}
-                    onClick={() => setSelectedCategory(cat)}
-                    className={`text-xs font-black uppercase tracking-wider transition-colors cursor-pointer ${
+                    onClick={() => {
+                      setSelectedCategory(cat);
+                      if (cat === 'ALL') {
+                        setCurrentIndex(0);
+                      } else {
+                        const foundIdx = TRANSFORMATION_ITEMS.findIndex(item => item.category === cat);
+                        if (foundIdx !== -1) setCurrentIndex(foundIdx);
+                      }
+                    }}
+                    className={`text-[9px] sm:text-[11px] font-black uppercase tracking-wider transition-colors cursor-pointer shrink-0 whitespace-nowrap px-1 py-0.5 rounded ${
                       selectedCategory === cat
-                        ? 'text-[#ff3333] drop-shadow-[0_0_10px_rgba(255,51,51,0.5)]'
-                        : 'text-[#777] hover:text-white'
+                        ? 'text-[#ff3333] drop-shadow-[0_0_8px_rgba(255,51,51,0.6)]'
+                        : 'text-[#888] hover:text-white'
                     }`}
                   >
                     {cat}
@@ -540,20 +421,20 @@ export default function TransitionsCollage() {
               </div>
 
               {/* Bottom Arrows */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 shrink-0">
                 <button
                   onClick={handlePrev}
                   aria-label="Previous Transformation"
-                  className="w-9 h-9 rounded-full bg-[#160808] hover:bg-[#ff3333] border border-white/15 hover:border-[#ff3333] text-white flex items-center justify-center transition-all cursor-pointer shadow-md"
+                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#160808] hover:bg-[#ff3333] border border-white/15 hover:border-[#ff3333] text-white flex items-center justify-center transition-all cursor-pointer shadow-sm"
                 >
-                  <ChevronLeft className="w-4 h-4" />
+                  <ChevronLeft className="w-3.5 h-3.5" />
                 </button>
                 <button
                   onClick={handleNext}
                   aria-label="Next Transformation"
-                  className="w-9 h-9 rounded-full bg-[#160808] hover:bg-[#ff3333] border border-white/15 hover:border-[#ff3333] text-white flex items-center justify-center transition-all cursor-pointer shadow-md"
+                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#160808] hover:bg-[#ff3333] border border-white/15 hover:border-[#ff3333] text-white flex items-center justify-center transition-all cursor-pointer shadow-sm"
                 >
-                  <ChevronRight className="w-4 h-4" />
+                  <ChevronRight className="w-3.5 h-3.5" />
                 </button>
               </div>
 
@@ -566,8 +447,8 @@ export default function TransitionsCollage() {
             VIEW MODE 2: FULL COLLAGE VIEW
            ======================================================== */}
         {activeTab === 'collage' && (
-          <div className="relative z-10 py-6">
-            <div className="flex items-center justify-between mb-8">
+          <div className="relative z-10 py-2 flex-1 overflow-y-auto max-h-[75vh] pr-1">
+            <div className="flex items-center justify-between mb-4">
               <div>
                 <span className="text-[#ff3333] text-[10px] font-black uppercase tracking-widest block mb-1">
                   Full Athlete Gallery
@@ -597,7 +478,7 @@ export default function TransitionsCollage() {
                 >
                   <div className="relative aspect-[4/3] w-full overflow-hidden">
                     <Image
-                      src={item.splitImg || item.thumbnail}
+                      src={item.showcaseImg || item.thumbnail}
                       alt={item.name}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -660,21 +541,21 @@ export default function TransitionsCollage() {
             <div className="space-y-6 max-h-[70vh] overflow-y-auto pr-2">
               <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-2xl overflow-hidden border border-white/15 bg-black">
                 <Image
-                  src="/transitions/feat_perfect.jpg"
+                  src="/transitions/transitions_master_collage.jpg"
                   alt="Transitions Master Showcase"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {TRANSFORMATION_ITEMS.map((item) => (
-                  <div key={item.id} className="relative aspect-[4/3] rounded-xl overflow-hidden border border-white/10">
+                  <div key={item.id} className="relative aspect-[4/3] rounded-xl overflow-hidden border border-white/10 group cursor-pointer" onClick={() => { setCurrentIndex(TRANSFORMATION_ITEMS.findIndex(c => c.id === item.id)); setIsModalOpen(false); }}>
                     <Image
-                      src={item.splitImg || item.thumbnail}
+                      src={item.showcaseImg || item.thumbnail}
                       alt={item.name}
                       fill
-                      className="object-cover"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-3">
                       <span className="text-white font-black text-xs">{item.tag}</span>

@@ -5,9 +5,10 @@ import ServicesSection from '@/components/ServicesSection';
 import CertificationsSection from '@/components/CertificationsSection';
 import ClientReviewCard from '@/components/ClientReviewCard';
 import TransitionsCard from '@/components/TransitionsCard';
+import TransitionsCollage from '@/components/TransitionsCollage';
 import FeedbackMarqueeSection from '@/components/FeedbackMarqueeSection';
 import Footer from '@/components/Footer';
-import { Play, ArrowRight, User, BarChart2, Settings, TrendingUp, Heart, Zap, Trophy, ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { Play, ArrowRight, User, BarChart2, Settings, TrendingUp, Heart, Zap, Trophy, ChevronLeft, ChevronRight, Star, Mountain } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -292,8 +293,32 @@ export default function Home() {
               {/* Card 2: Interactive Client Testimonials & Reviews */}
               <ClientReviewCard />
 
-              {/* Card 3: Transition Card (Replaced Men's Physique) */}
-              <TransitionsCard />
+              {/* Card 3: Achieve Peak Performance */}
+              <div className="relative rounded-2xl overflow-hidden aspect-[3/4] border border-[#ff3333]/50 shadow-[0_20px_50px_rgba(255,51,51,0.1)] group">
+                 <Image 
+                   src="/peak_performance.jpg" 
+                   alt="Achieve Peak Performance" 
+                   fill 
+                   className="object-cover group-hover:scale-105 transition-transform duration-700" 
+                   priority 
+                 />
+                 
+                 {/* Top Badge */}
+                 <div className="absolute top-4 left-4 z-10 bg-black/75 backdrop-blur-md border border-[#ff3333]/40 px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
+                   <Mountain className="w-3.5 h-3.5 text-[#ff3333]" />
+                   <span className="text-[10px] font-black uppercase tracking-wider text-white">Achieve Peak ⛰️</span>
+                 </div>
+
+                 <div className="absolute inset-0 bg-gradient-to-t from-[#050101] via-[#050101]/40 to-transparent flex flex-col justify-end p-6 md:p-8">
+                    <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter mb-2 drop-shadow-md">
+                      Peak Performance
+                    </h3>
+                    <div className="flex items-center gap-2 text-[#ff3333]">
+                       <Mountain className="w-4 h-4 shrink-0" />
+                       <span className="text-xs font-black uppercase tracking-widest">Summit &amp; Endurance</span>
+                    </div>
+                 </div>
+              </div>
             </div>
             
             {/* Stats Row */}
@@ -315,6 +340,18 @@ export default function Home() {
                   <p className="text-[10px] font-black text-[#ff3333] uppercase tracking-[0.2em]">Ongoing Support</p>
                </div>
             </div>
+          </div>
+        </section>
+
+        {/* Dedicated Transitions & Transformations Section - 100vh on all devices */}
+        <section id="transitions" className="h-[100dvh] max-h-[100dvh] min-h-[100dvh] relative overflow-hidden bg-[#050101] border-t border-white/5 flex flex-col justify-center">
+          {/* Background Brand Watermark */}
+          <div className="absolute top-1/2 -translate-y-1/2 left-0 w-[150%] md:w-[120%] overflow-hidden pointer-events-none select-none z-0 flex justify-start opacity-[0.03]">
+             <span className="text-[12rem] md:text-[22rem] font-black text-[#ff3333] leading-none whitespace-nowrap tracking-tighter">TRANSITIONS</span>
+          </div>
+
+          <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 w-full h-full flex flex-col justify-between py-2 sm:py-3 md:py-4 relative z-10">
+            <TransitionsCollage />
           </div>
         </section>
 
