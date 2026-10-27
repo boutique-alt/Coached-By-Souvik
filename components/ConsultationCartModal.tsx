@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useBooking, ALL_SERVICES } from '@/context/BookingContext';
-import { X, ShieldAlert, CheckCircle2, ArrowRight, Phone, User, Mail, Sparkles, Loader2, AlertCircle } from 'lucide-react';
+import { X, ShieldAlert, CheckCircle2, ArrowRight, Phone, User, Mail, Sparkles, Loader2, AlertCircle, CreditCard, Lock } from 'lucide-react';
 
 export default function ConsultationCartModal() {
   const { selectedService, isCartOpen, closeCart, consultationFee, selectService } = useBooking();
@@ -13,14 +13,12 @@ export default function ConsultationCartModal() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [paymentId, setPaymentId] = useState('');
 
   if (!isCartOpen) return null;
 
-  const handleCheckout = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setErrorMessage('');
-
+  // Send email to Coach Souvik only after successful payment verification
+  const sendBookingConfirmationEmail = async (successfulPaymentId: string) => {
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -30,13 +28,15 @@ export default function ConsultationCartModal() {
         },
         body: JSON.stringify({
           access_key: '5a6414fe-c45f-44a0-af54-bca62bca36c1',
-          subject: `🚨 New Consultation Booking: ${name} (${selectedService?.title || 'General Consultation'})`,
-          from_name: 'Souvik Fitness Consultation System',
+          subject: `🚨 [PAID ₹${consultationFee}] Consultation Booking: ${name} (${selectedService?.title || 'General Consultation'})`,
+          from_name: 'Coached By Souvik - Payment & Booking System',
           name: name,
           email: email,
           phone: phone,
           selected_service: selectedService?.title || 'General Consultation',
           consultation_fee: `₹${consultationFee}`,
+          payment_status: 'PAID (Verified via Razorpay)',
+          razorpay_payment_id: successfulPaymentId,
           client_notes: notes || 'No extra notes provided',
           timestamp: new Date().toLocaleString()
         })
@@ -44,14 +44,74 @@ export default function ConsultationCartModal() {
 
       const result = await response.json();
       if (result.success) {
+        setPaymentId(successfulPaymentId);
         setIsSuccess(true);
       } else {
-        setErrorMessage(result.message || 'Something went wrong. Please try again.');
+        setErrorMessage(result.message || 'Payment received, but failed to send email. Please contact Coach Souvik with your Payment ID.');
       }
     } catch (err) {
-      setErrorMessage('Could not send booking request. Please check your internet connection.');
+      setErrorMessage('Payment received, but email dispatch failed. Please save your Payment ID: ' + successfulPaymentId);
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const handleCheckout = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMessage('');
+
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      setErrorMessage('Please fill in your Name, Email, and Phone number before proceeding to payment.');
+      return;
+    }
+
+    const razorpayKey = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_live_TsppB7Kg56in8f';
+
+    // If Razorpay SDK is not loaded yet
+    if (typeof window === 'undefined' || !window.Razorpay) {
+      setErrorMessage('Payment gateway is loading. Please check your internet connection and try again in 5 seconds.');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const options = {
+        key: razorpayKey,
+        amount: consultationFee * 100, // Amount in paise (₹499 -> 49900 paise)
+        currency: 'INR',
+        name: 'Coached By Souvik',
+        description: `Consultation Fee: ${selectedService?.title || '1-on-1 Strategy Session'}`,
+        image: '/logo.jpg',
+        prefill: {
+          name: name,
+          email: email,
+          contact: phone
+        },
+        theme: {
+          color: '#ff3333'
+        },
+        modal: {
+          ondismiss: () => {
+            setIsSubmitting(false);
+            setErrorMessage('Payment cancelled. Your booking was not completed.');
+          }
+        },
+        handler: async (response: { razorpay_payment_id: string }) => {
+          // Trigger email only when payment is actually paid & confirmed
+          await sendBookingConfirmationEmail(response.razorpay_payment_id);
+        }
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.on('payment.failed', (response: any) => {
+        setIsSubmitting(false);
+        setErrorMessage(response.error?.description || 'Payment failed. Please try a different payment method.');
+      });
+      rzp.open();
+    } catch (err: any) {
+      setIsSubmitting(false);
+      setErrorMessage(err?.message || 'Could not initiate payment. Please verify your Razorpay Key ID.');
     }
   };
 
@@ -85,29 +145,34 @@ export default function ConsultationCartModal() {
 
           {isSuccess ? (
             <div className="py-12 flex flex-col items-center text-center space-y-6">
-              <div className="w-20 h-20 rounded-full bg-[#ff3333]/10 border-2 border-[#ff3333] flex items-center justify-center text-[#ff3333] shadow-[0_0_30px_rgba(255,51,51,0.3)]">
+              <div className="w-20 h-20 rounded-full bg-[#00e676]/10 border-2 border-[#00e676] flex items-center justify-center text-[#00e676] shadow-[0_0_30px_rgba(0,230,118,0.3)] animate-pulse">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
               <div>
-                <h3 className="text-2xl font-black uppercase tracking-tight text-white mb-2">Booking Details Received!</h3>
+                <span className="inline-block px-3 py-1 bg-[#00e676]/10 border border-[#00e676]/40 text-[#00e676] text-[10px] font-black uppercase tracking-widest rounded-full mb-3">
+                  Payment Confirmed • ₹{consultationFee} Received
+                </span>
+                <h3 className="text-2xl font-black uppercase tracking-tight text-white mb-2">Booking Confirmed!</h3>
                 <p className="text-sm text-[#a0a0a0] max-w-md mx-auto leading-relaxed">
-                  Thank you, <span className="text-white font-bold">{name}</span>. Your consultation request has been emailed directly to Coach Souvik at <strong className="text-white">coachsouvikbanerjee@gmail.com</strong>.
+                  Thank you, <span className="text-white font-bold">{name}</span>. Your payment has been verified and your booking has been emailed directly to Coach Souvik at <strong className="text-white">coachsouvikbanerjee@gmail.com</strong>.
                 </p>
-                <div className="mt-4 inline-block bg-[#120505] border border-[#ff3333]/40 rounded-xl px-4 py-2 text-xs font-bold text-[#ff3333] uppercase tracking-wider">
-                  Topic: {selectedService?.title}
-                </div>
+                {paymentId && (
+                  <div className="mt-4 inline-block bg-[#120505] border border-white/20 rounded-xl px-4 py-2 text-xs font-mono text-[#a0a0a0]">
+                    Payment ID: <strong className="text-white">{paymentId}</strong>
+                  </div>
+                )}
               </div>
               <div className="bg-[#140606] border border-white/10 rounded-2xl p-6 text-left w-full space-y-2 text-xs text-[#a0a0a0]">
                 <p className="font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-[#ff3333]" /> What Happens Next:
+                  <Sparkles className="w-4 h-4 text-[#ff3333]" /> Next Steps:
                 </p>
-                <p>1. Coach Souvik will review your requirements and send a calendar invitation to <strong className="text-white">{email}</strong>.</p>
-                <p>2. We will schedule a 30-minute 1-on-1 strategy call.</p>
-                <p>3. Coaching plans, roadmap, and exact fees will be finalized during your session.</p>
+                <p>1. Coach Souvik has received your booking details and payment confirmation.</p>
+                <p>2. You will receive a WhatsApp message / Call on <strong className="text-white">{phone}</strong> within 12 hours to schedule your 1-on-1 strategy call.</p>
+                <p>3. A calendar invitation will be dispatched to <strong className="text-white">{email}</strong>.</p>
               </div>
               <button 
                 onClick={() => { setIsSuccess(false); closeCart(); }}
-                className="w-full bg-[#ff3333] hover:bg-[#cc0000] text-white font-black py-4 rounded-xl uppercase tracking-widest text-xs transition-colors shadow-[0_0_20px_rgba(255,51,51,0.4)]"
+                className="w-full bg-[#ff3333] hover:bg-[#cc0000] text-white font-black py-4 rounded-xl uppercase tracking-widest text-xs transition-colors shadow-[0_0_20px_rgba(255,51,51,0.4)] cursor-pointer"
               >
                 Back to Site
               </button>
@@ -270,15 +335,21 @@ export default function ConsultationCartModal() {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin text-white" />
-                      <span>Sending Booking Details...</span>
+                      <span>Opening Secure Payment...</span>
                     </>
                   ) : (
                     <>
-                      <span>Submit & Book Consultation (₹{consultationFee})</span>
+                      <CreditCard className="w-4 h-4 text-white" />
+                      <span>Pay ₹{consultationFee} & Book Consultation</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </>
                   )}
                 </button>
+
+                <div className="flex items-center justify-center gap-2 pt-2 text-[10px] text-[#707070]">
+                  <Lock className="w-3 h-3 text-[#00e676]" />
+                  <span>100% Secure Checkout via Razorpay • UPI, GPay, Cards & NetBanking</span>
+                </div>
               </form>
             </>
           )}
