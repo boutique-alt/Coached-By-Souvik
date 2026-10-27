@@ -36,7 +36,9 @@ export const metadata: Metadata = {
     siteName: "Coached By Souvik",
     images: [
       {
-        url: "/og-image-v3.jpg",
+        url: "https://www.coachbysouvik.com/og-image-v4.jpg",
+        secureUrl: "https://www.coachbysouvik.com/og-image-v4.jpg",
+        type: "image/jpeg",
         width: 1200,
         height: 630,
         alt: "Coached By Souvik - Elite Strength & Physique Coach",
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "COACHED BY SOUVIK | Elite Strength & Physique Coach",
     description: "Individualised coaching for people who want more than a generic workout plan. Strength, movement, nutrition and real-world transformation.",
-    images: ["/og-image-v3.jpg"],
+    images: ["https://www.coachbysouvik.com/og-image-v4.jpg"],
   },
   icons: {
     icon: "/logo.jpg",
