@@ -85,7 +85,7 @@ const BookingContext = createContext<BookingContextType | undefined>(undefined);
 export function BookingProvider({ children }: { children: ReactNode }) {
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const consultationFee = 499; // ₹499 Flat Consultation Fee (nominal booking fee)
+  const consultationFee = 1; // Temporary ₹1 for Live Gateway Testing (Change back to 499 later)
 
   const openBookingForService = (service: ServiceItem) => {
     setSelectedService(service);
